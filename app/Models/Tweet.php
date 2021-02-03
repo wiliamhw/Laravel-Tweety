@@ -4,14 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\User;
+use App\Traits\Likable;
 
 class Tweet extends Model
 {
-    use HasFactory;
+    use HasFactory, Likable;
 
     protected $fillable = ['user_id', 'body'];
-    // protected $guarded = [];
 
     public function user() {
         return $this->belongsTo(User::class);

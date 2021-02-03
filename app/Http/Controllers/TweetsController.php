@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Tweet;
 
-class TweetsController extends Controller 
+class TweetsController extends Controller
 {
 
     public function index()
@@ -15,8 +15,8 @@ class TweetsController extends Controller
         ]);
     }
 
-    public function store() {
-
+    public function store()
+    {
         $attributes = request()->validate(['body' => 'required|max:255']);
 
         Tweet::create([

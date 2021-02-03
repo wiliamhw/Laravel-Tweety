@@ -10,7 +10,7 @@
                     {{ $slot }}
                 </div>
 
-                <div class="lg:w-1/6 bg-blue-100 rounded-lg p-4"
+                <div class="border border-gray-300 lg:w-1/6 bg-blue-100 rounded-lg py-4 px-6"
                     style="height:fit-content"
                 >
                     @include ('_friends-list')

@@ -23,17 +23,18 @@
 </head>
 
 <body class="bg-gray-100 h-screen antialiased leading-none font-sans">
-    <div id="app">
-        <section class="px-8 py-4 mb-6">
-            <header class="container mx-auto">
-                <h1>
-                    <img src="/images/logo.svg" alt="Tweety">
-                </h1>
-            </header>
-        </section>
+<div id="app">
+    <section class="px-8 py-4 mb-6">
+        <header class="container mx-auto">
+            <h1>
+                <img src="/images/logo.svg" alt="Tweety">
+            </h1>
+        </header>
+    </section>
 
-        {{ $slot }}
-    </div>
+    {{ $slot }}
+</div>
 </body>
 
+<script src="https://unpkg.com/turbolinks"></script>
 </html>
