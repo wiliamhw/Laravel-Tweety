@@ -33,6 +33,7 @@ class ProfilesController extends Controller
             ],
             'name' => ['string', 'required', 'max:255'],
             'avatar' => ['image'],
+            'profile_banner' => ['image'],
             'email' => [
                 'string',
                 'required',
@@ -51,6 +52,10 @@ class ProfilesController extends Controller
 
         if (request('avatar')) {
             $attributes['avatar'] = request('avatar')->store('avatars');
+        }
+
+        if (request('profile_banner')) {
+            $attributes['profile_banner'] = request('profile_banner')->store('profile-banners');
         }
 
         $user->update($attributes);

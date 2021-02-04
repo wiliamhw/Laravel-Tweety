@@ -69,6 +69,31 @@
             @enderror
         </div>
 
+        <div class="mb-6">
+            <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                   for="profile_banner"
+            >
+                Profile Banner
+            </label>
+
+            <div class="flex">
+                <input class="border border-gray-400 p-2 w-full"
+                       type="file"
+                       name="profile_banner"
+                       id="profile_banner"
+                       accept="image/*"
+                >
+
+                <img src="{{ $user->profile_banner }}"
+                     alt="your profile_banner"
+                     width="125"
+                >
+            </div>
+
+            @error('avatar')
+                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+            @enderror
+        </div>
 
         <div class="mb-6">
             <label class="block mb-2 uppercase font-bold text-xs text-gray-700"

@@ -1,9 +1,9 @@
 <x-app>
     <header class="mb-6 relative">
         <div class="relative">
-            <img src="/images/default-profile-banner.jpg"
+            <img src="{{ $user->profile_banner }}"
                  alt=""
-                 class="mb-2">
+                 class="mb-2 max-h-56 object-cover w-screen">
 
             <img src="{{ $user->avatar }}"
                  alt=""

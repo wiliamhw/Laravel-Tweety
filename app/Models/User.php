@@ -20,6 +20,7 @@ class User extends Authenticatable
     protected $fillable = [
         'username',
         'avatar',
+        'profile_banner',
         'name',
         'email',
         'password',
@@ -49,7 +50,11 @@ class User extends Authenticatable
     }
 
     public function getAvatarAttribute($value) {
-        return asset('storage/' . ($value ?: 'avatars/default-avatar.png'));
+        return asset('storage/' . ($value ?: 'avatars/default-avatar.jpeg'));
+    }
+
+    public function getProfileBannerAttribute($value) {
+        return asset('storage/' . ($value ?: 'profile-banners/default-profile-banner.jpg'));
     }
 
     public function timeline() {
