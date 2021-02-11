@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\User;
+use App\Models\Tweet;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,5 +16,39 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
+        $this->call([
+            UserSeeder::class,
+            TweetSeeder::class // Every user makes ten tweets
+        ]);
+
+        $users = User::all();
+        $tweets = Tweet::all();
+
+        // Populate follows table
+        // Every user follow one-to-three random user
+        $users->each(
+            function ($user) use ($users) {
+                $users->random(rand(1, 3))->each(
+                    function ($rand_user) use ($user) {
+                        $user->follow($rand_user);
+                    }
+                );
+            }
+        );
+
+        // Populate likes table
+        // Every tweet is liked/disliked by a total of one-to-three
+        $tweets->each(
+            function ($tweet) use ($users) {
+                $users->random(rand(1, 3))->each(
+                    function ($rand_user) use ($tweet) {
+                        $tweet->like(
+                            $rand_user,
+                            $liked = rand(0, 1)
+                        );
+                    }
+                );
+            }
+        );
     }
 }
