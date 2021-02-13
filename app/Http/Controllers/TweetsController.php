@@ -40,13 +40,4 @@ class TweetsController extends Controller
 
         return redirect()->route('home');
     }
-
-    public function show($tweet)
-    {
-        $tweet = Tweet::where('id', $tweet)->withLikes()->first();
-
-        return view('tweets.show-tweet', [
-            'tweet' => $tweet
-        ]);
-    }
 }

@@ -24,12 +24,15 @@
             @endif
 
             @if ($tweet->image)
-                <a href="/tweet/{{ $tweet->id }}">
-                    <img src="{{ $tweet->image }}"
-                         class="mt-4 border border-cool-gray-400 rounded-lg object-cover outline-none"
-                         style="width: 560px; height: 337px"
-                    >
-                </a>
+                <img src="{{ $tweet->image }}" onclick="on({{ $tweet->id }})"
+                     class="mt-4 border border-cool-gray-400 rounded-lg object-cover outline-none cursor-pointer"
+                     style="width: 560px; height: 337px"
+                >
+                <div id="{{ $tweet->id }}" class="overlay" onclick="off({{ $tweet->id }})">
+                    <div id="overlay-img">
+                        <img src="{{ $tweet->image }}">
+                    </div>
+                </div>
             @endif
         </div>
 
