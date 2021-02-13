@@ -61,6 +61,11 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get(
+    '/tweet/{tweet}',
+    [TweetsController::class, 'show']
+);
+
+Route::get(
     '/profiles/{user:username}',
     [ProfilesController::class, 'show']
 )->name('profile');

@@ -15,11 +15,6 @@
 
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-    <style>
-        textarea {
-            background-color: #f4f4f4;
-        }
-    </style>
 </head>
 
 <body class="bg-gray-100 h-screen antialiased leading-none font-sans">
@@ -35,6 +30,5 @@
     {{ $slot }}
 </div>
 </body>
-
-<script src="https://unpkg.com/turbolinks"></script>
+{{--<script src="https://unpkg.com/turbolinks"></script>--}}
 </html>

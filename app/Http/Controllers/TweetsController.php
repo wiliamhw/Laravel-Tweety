@@ -17,13 +17,36 @@ class TweetsController extends Controller
 
     public function store()
     {
-        $attributes = request()->validate(['body' => 'required|max:255']);
+        $attributes = request()->validate([
+            'body' => [
+                'required_without:image_tweet',
+                'max:255'
+            ],
+            'image_tweet' => [
+                'image',
+                'required_without:body'
+            ],
+        ]);
+
+        if (request('image_tweet')) {
+            $attributes['image_tweet'] = request('image_tweet')->store('image_tweets');
+        }
 
         Tweet::create([
             'user_id' => auth()->id(),
-            'body' => $attributes['body']
+            'body' => $attributes['body'],
+            'image' => $attributes['image_tweet']
         ]);
 
         return redirect()->route('home');
+    }
+
+    public function show($tweet)
+    {
+        $tweet = Tweet::where('id', $tweet)->withLikes()->first();
+
+        return view('tweets.show-tweet', [
+            'tweet' => $tweet
+        ]);
     }
 }
