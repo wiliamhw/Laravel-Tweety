@@ -21,6 +21,7 @@ class User extends Authenticatable
         'username',
         'avatar',
         'profile_banner',
+        'profile_text',
         'name',
         'email',
         'password',
@@ -57,6 +58,14 @@ class User extends Authenticatable
         return asset('storage/' . ($value ?: 'profile-banners/default-profile-banner.jpg'));
     }
 
+    public function getAvatarPathAttribute($value) {
+        return getRaws($this->avatar);
+    }
+
+    public function getProfileBannerPathAttribute($value) {
+        return getRaws($this->profile_banner);
+    }
+
     public function timeline() {
         $follower = $this->follows()->pluck('id');
 
@@ -64,7 +73,7 @@ class User extends Authenticatable
             ->orWhere('user_id', $this->id)
             ->withLikes()
             ->latest()
-            ->paginate($_ENV['PAGINATE']);
+            ->paginate(getPaginate());
     }
 
     public function tweets() {

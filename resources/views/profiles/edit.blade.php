@@ -45,6 +45,22 @@
 
         <div class="mb-6">
             <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                   for="profile_text"
+            >
+                Profile Text
+            </label>
+            <textarea id="profile_text"
+                      name="profile_text"
+                      class="border border-gray-400 p-2 w-full"
+            >{{ $user->profile_text }}</textarea>
+
+            @error('profile_text')
+                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+            @enderror
+        </div>
+
+        <div class="mb-6">
+            <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
                   for="avatar"
             >
                 Avatar

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Models\User;
+use File;
 
 class ProfilesController extends Controller
 {
@@ -12,7 +12,7 @@ class ProfilesController extends Controller
     {
         return view('profiles.show', [
             'user' => $user,
-            'tweets' => $user->tweets()->withLikes()->paginate($_ENV['PAGINATE']),
+            'tweets' => $user->tweets()->withLikes()->paginate(getPaginate()),
         ]);
     }
 
@@ -48,18 +48,36 @@ class ProfilesController extends Controller
                 'max:255',
                 'confirmed',
             ],
+            'profile_text' => ['string']
         ]);
 
         if (request('avatar')) {
             $attributes['avatar'] = request('avatar')->store('avatars');
+            $this->deleteLocalFile($user->avatar_path);
         }
 
         if (request('profile_banner')) {
             $attributes['profile_banner'] = request('profile_banner')->store('profile-banners');
+            $this->deleteLocalFile($user->profile_banner_path);
         }
 
         $user->update($attributes);
 
         return redirect($user->path());
+    }
+
+    public function deleteLocalFile($path_to_file)
+    {
+        // Don't delete default image
+        if ($path_to_file === 'storage/avatars/default-avatar.jpeg'
+            || $path_to_file === 'storage/profile-banners/default-profile-banner.jpg') {
+            return;
+        }
+
+        if (File::exists(public_path($path_to_file))) {
+            File::delete(public_path($path_to_file));
+        } else {
+            abort(404, 'File does not exists');
+        }
     }
 }

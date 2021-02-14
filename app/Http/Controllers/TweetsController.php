@@ -30,6 +30,8 @@ class TweetsController extends Controller
 
         if (request('image_tweet')) {
             $attributes['image_tweet'] = request('image_tweet')->store('image_tweets');
+        } else {
+            $attributes['image_tweet'] = null;
         }
 
         Tweet::create([
