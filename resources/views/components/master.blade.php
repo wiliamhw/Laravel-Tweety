@@ -9,16 +9,18 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/title-icon.png') }}">
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/overlay.js') }}" defer></script>
+    <script src="{{ asset('js/alert.js') }}" defer></script>
     <script src="https://unpkg.com/turbolinks" defer></script>
 
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/overlay.css') }}" rel="stylesheet">
-
+    <link href="{{ asset('css/alert.css') }}" rel="stylesheet">
 </head>
 
 <body class="bg-gray-100 h-screen antialiased leading-none font-sans">

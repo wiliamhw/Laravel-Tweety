@@ -1,0 +1,12 @@
+.alert {
+    position:fixed;
+    bottom: 2vh;
+    right: 2vw;
+    width: 450px;
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+.fade-out {
+    opacity: 0;
+}

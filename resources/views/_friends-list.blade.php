@@ -3,7 +3,7 @@
 <ul>
     @forelse (current_user()->follows as $user)
         <li class="{{  $loop->last ? '' : 'mb-4' }}">
-            <a href="{{ route('profile', $user) }}" class="flex items-center text-small">
+            <a href="{{ route('profile', $user) }}" class="flex items-center text-small hover:underline hover:opacity-75">
                 <img
                     src="{{ $user->avatar }}"
                     alt=""

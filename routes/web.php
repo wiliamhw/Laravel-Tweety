@@ -59,9 +59,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/explore', [ExploreController::class, 'index'])->name('explore');
 });
 
-Route::post('/alert', function () {
-    return back()->with('success','Item created successfully!');
-});
+//Route::post('/alert', function () {
+//    return back()->with('info','Item 1 created successfully !');
+//});
 
 Route::get(
     '/profiles/{user:username}',

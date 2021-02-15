@@ -63,7 +63,7 @@ class ProfilesController extends Controller
 
         $user->update($attributes);
 
-        return redirect($user->path());
+        return redirect($user->path())->with('success', 'Profile updated successfully!');
     }
 
     public function deleteLocalFile($path_to_file)

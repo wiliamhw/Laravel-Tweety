@@ -1,31 +1,6 @@
-<style>
-    .alert {
-        opacity: 1;
-        transition: opacity 1s ease;
-    }
-
-    .fade-out {
-        opacity: 0;
-    }
-</style>
-
-<script>
-    // Auto fade-out alert
-    window.setTimeout(function () {
-        let element = document.querySelector(".alert");
-        if (element) {
-            element.classList.add("fade-out");
-
-            element.addEventListener("transitionend", function () {
-                element.parentNode.removeChild(element);
-            });
-        }
-    }, 2000);
-</script>
-
 @if ($message = Session::get('success'))
     <div id="success-alert"
-        class="alert bg-green-100 px-6 py-4 mx-2 my-4 rounded-md text-lg flex items-center mx-auto w-3/4 xl:w-2/4"
+        class="alert bg-green-200 px-6 py-4 mx-2 my-4 rounded-md text-lg flex items-center mx-auto w-3/4 xl:w-2/4"
     >
         <svg
             viewBox="0 0 24 24"
@@ -39,8 +14,8 @@
         <span class="text-green-800"> {{ $message }} </span>
 
         <div class="flex justify-end flex-1">
-            <svg id="success-btn" fill="none" viewBox="0 0 24 24" class="w-4 h-4 text-red-600 cursor-pointer"
-                 stroke="currentColor" onclick="closeAlert(this.id)">
+            <svg fill="none" viewBox="0 0 24 24" class="w-4 h-4 text-red-600 cursor-pointer"
+                 stroke="currentColor" onclick="closeAlert('success-alert')">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
             </svg>
         </div>
@@ -49,7 +24,7 @@
 
 @if ($message = Session::get('error'))
     <div id="error-alert"
-        class="alert bg-red-100 px-6 py-4 mx-2 my-4 rounded-md text-lg flex items-center mx-auto w-3/4 xl:w-2/4"
+        class="alert bg-red-200 px-6 py-4 mx-2 my-4 rounded-md text-lg flex items-center mx-auto w-3/4 xl:w-2/4"
     >
         <svg
             viewBox="0 0 24 24"
@@ -63,8 +38,8 @@
         <span class="text-red-800"> {{ $message }} </span>
 
         <div class="flex justify-end flex-1">
-            <svg id="error-btn" fill="none" viewBox="0 0 24 24" class="w-4 h-4 text-red-600 cursor-pointer"
-                 stroke="currentColor" onclick="closeAlert(this.id)">
+            <svg fill="none" viewBox="0 0 24 24" class="w-4 h-4 text-red-600 cursor-pointer"
+                 stroke="currentColor" onclick="closeAlert('error-alert')">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
             </svg>
         </div>
@@ -73,7 +48,7 @@
 
 @if ($message = Session::get('warning'))
     <div id="warning-alert"
-        class="alert bg-orange-100 px-6 py-4 my-4 rounded-md text-lg flex items-center mx-auto w-3/4 xl:w-2/4"
+        class="alert bg-orange-200 px-6 py-4 my-4 rounded-md text-lg flex items-center mx-auto w-3/4 xl:w-2/4"
     >
         <svg
             viewBox="0 0 24 24"
@@ -87,8 +62,8 @@
         <span class="text-yellow-800"> {{ $message }} </span>
 
         <div class="flex justify-end flex-1">
-            <svg id="warning-btn" fill="none" viewBox="0 0 24 24" class="w-4 h-4 text-red-600 cursor-pointer"
-                 stroke="currentColor" onclick="closeAlert(this.id)">
+            <svg fill="none" viewBox="0 0 24 24" class="w-4 h-4 text-red-600 cursor-pointer"
+                 stroke="currentColor" onclick="closeAlert('warning-alert')">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
             </svg>
         </div>
@@ -97,7 +72,7 @@
 
 @if ($message = Session::get('info'))
     <div id="info-alert"
-        class="alert bg-blue-100 px-6 py-4 mx-2 my-4 rounded-md text-lg flex items-center mx-auto w-3/4 xl:w-2/4"
+        class="alert bg-blue-200 px-6 py-4 mx-2 my-4 rounded-md text-lg flex items-center mx-auto w-3/4 xl:w-2/4"
     >
         <svg
             viewBox="0 0 24 24"
@@ -111,8 +86,8 @@
         <span class="text-blue-800"> {{ $message }} </span>
 
         <div class="flex justify-end flex-1">
-            <svg id="info-btn" fill="none" viewBox="0 0 24 24" class="w-4 h-4 text-red-600 cursor-pointer"
-                 stroke="currentColor" onclick="closeAlert(this.id)">
+            <svg fill="none" viewBox="0 0 24 24" class="w-4 h-4 text-red-600 cursor-pointer"
+                 stroke="currentColor" onclick="closeAlert('info-alert')">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
             </svg>
         </div>

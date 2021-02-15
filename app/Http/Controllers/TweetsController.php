@@ -40,6 +40,6 @@ class TweetsController extends Controller
             'image' => $attributes['image_tweet']
         ]);
 
-        return redirect()->route('home');
+        return redirect()->route('home')->with('success','Tweet posted successfully!');
     }
 }

@@ -4,7 +4,7 @@
             <img
                 src="{{ $tweet->user->avatar }}"
                 alt=""
-                class="rounded-full mr-2"
+                class="rounded-full mr-2 hover:opacity-75"
                 width="50"
                 height="50"
             >
@@ -14,7 +14,7 @@
     <div class="flex-col">
         <div>
             <a href="{{ $tweet->user->path() }}">
-                <h5 class="font-bold mb-4">{{ $tweet->user->name }}</h5>
+                <h5 class="font-bold mb-4 hover:underline">{{ $tweet->user->name }}</h5>
             </a>
 
             @if ($tweet->body)
