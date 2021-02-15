@@ -1,6 +1,31 @@
+<style>
+    .alert {
+        opacity: 1;
+        transition: opacity 1s ease;
+    }
+
+    .fade-out {
+        opacity: 0;
+    }
+</style>
+
+<script>
+    // Auto fade-out alert
+    window.setTimeout(function () {
+        let element = document.querySelector(".alert");
+        if (element) {
+            element.classList.add("fade-out");
+
+            element.addEventListener("transitionend", function () {
+                element.parentNode.removeChild(element);
+            });
+        }
+    }, 2000);
+</script>
+
 @if ($message = Session::get('success'))
     <div id="success-alert"
-        class="bg-green-100 px-6 py-4 mx-2 my-4 rounded-md text-lg flex items-center mx-auto w-3/4 xl:w-2/4"
+        class="alert bg-green-100 px-6 py-4 mx-2 my-4 rounded-md text-lg flex items-center mx-auto w-3/4 xl:w-2/4"
     >
         <svg
             viewBox="0 0 24 24"
@@ -24,7 +49,7 @@
 
 @if ($message = Session::get('error'))
     <div id="error-alert"
-        class="bg-red-100 px-6 py-4 mx-2 my-4 rounded-md text-lg flex items-center mx-auto w-3/4 xl:w-2/4"
+        class="alert bg-red-100 px-6 py-4 mx-2 my-4 rounded-md text-lg flex items-center mx-auto w-3/4 xl:w-2/4"
     >
         <svg
             viewBox="0 0 24 24"
@@ -48,7 +73,7 @@
 
 @if ($message = Session::get('warning'))
     <div id="warning-alert"
-        class="bg-orange-100 px-6 py-4 my-4 rounded-md text-lg flex items-center mx-auto w-3/4 xl:w-2/4"
+        class="alert bg-orange-100 px-6 py-4 my-4 rounded-md text-lg flex items-center mx-auto w-3/4 xl:w-2/4"
     >
         <svg
             viewBox="0 0 24 24"
@@ -72,7 +97,7 @@
 
 @if ($message = Session::get('info'))
     <div id="info-alert"
-        class="bg-blue-100 px-6 py-4 mx-2 my-4 rounded-md text-lg flex items-center mx-auto w-3/4 xl:w-2/4"
+        class="alert bg-blue-100 px-6 py-4 mx-2 my-4 rounded-md text-lg flex items-center mx-auto w-3/4 xl:w-2/4"
     >
         <svg
             viewBox="0 0 24 24"

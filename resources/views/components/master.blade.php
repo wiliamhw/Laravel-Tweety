@@ -13,7 +13,6 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/overlay.js') }}" defer></script>
-    <script src="{{ asset('js/alert.js') }}" defer></script>
     <script src="https://unpkg.com/turbolinks" defer></script>
 
     <!-- Styles -->
