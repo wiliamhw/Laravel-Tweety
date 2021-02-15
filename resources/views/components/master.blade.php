@@ -13,6 +13,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/overlay.js') }}" defer></script>
+    <script src="{{ asset('js/alert.js') }}" defer></script>
     <script src="https://unpkg.com/turbolinks" defer></script>
 
     <!-- Styles -->
@@ -22,17 +23,17 @@
 </head>
 
 <body class="bg-gray-100 h-screen antialiased leading-none font-sans">
-<div id="app">
-    <section class="px-8 py-4 mb-6">
-        <header class="container mx-auto">
-            <h1>
-                <img src="/images/logo.svg" alt="Tweety">
-            </h1>
-        </header>
-    </section>
-
-    {{ $slot }}
-</div>
+    <div id="app">
+        <section class="px-8 py-4 mb-6">
+            <header class="container mx-auto">
+                <h1>
+                    <img src="/images/logo.svg" alt="Tweety">
+                </h1>
+            </header>
+        </section>
+        <x-alerts/>
+        {{ $slot }}
+    </div>
 </body>
 
 </html>

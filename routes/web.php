@@ -28,6 +28,7 @@ Route::get('/', function () {
 });
 
 Route::middleware('auth')->group(function () {
+
     Route::get('/home', function () {
         return redirect('/tweets');
     });
@@ -56,8 +57,10 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::get('/explore', [ExploreController::class, 'index'])->name('explore');
+});
 
-    Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::post('/alert', function () {
+    return back()->with('success','Item created successfully!');
 });
 
 Route::get(
