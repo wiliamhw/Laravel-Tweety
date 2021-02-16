@@ -15,12 +15,14 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/overlay.js') }}" defer></script>
     <script src="{{ asset('js/alert.js') }}" defer></script>
+    <script src="{{ asset('js/three-dot.js') }}" defer></script>
     <script src="https://unpkg.com/turbolinks" defer></script>
 
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/overlay.css') }}" rel="stylesheet">
     <link href="{{ asset('css/alert.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/three-dot.css') }}" rel="stylesheet">
 </head>
 
 <body class="bg-gray-100 h-screen antialiased leading-none font-sans">

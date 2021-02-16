@@ -31,7 +31,7 @@
         </div>
 
         @if ($user->profile_text)
-            <p class="text-sm mt-7">
+            <p class="mt-7" style="font-size: 15px; line-height: 1.3125;">
                 {{ $user->profile_text }}
             </p>
         @else

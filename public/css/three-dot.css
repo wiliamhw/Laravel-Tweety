@@ -1,0 +1,29 @@
+.dot-span {
+    top: -10px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 50%;
+    transition: background-color 0.25s ease;
+}
+
+.dot-span:hover {
+    border-radius: 50%;
+    background-color: rgba(29, 161, 242, 0.1);
+}
+
+.dot-div {
+    height: fit-content;
+}
+
+.dot {
+    fill: #000000;
+    transition: fill 0.25s ease;
+}
+
+.options-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 5px;
+    background-color: rgba(255, 255, 255, 1);
+    z-index: 2;
+}
