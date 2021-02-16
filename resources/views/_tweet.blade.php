@@ -19,7 +19,7 @@
                         <h5 class="font-bold hover:underline">{{ $tweet->user->name }}</h5>
                     </a>
                 </span>
-                <x-three-dot/>
+                <x-three-dot :tweet="$tweet"/>
             </div>
         </div>
 

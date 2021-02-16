@@ -19,11 +19,42 @@
     transition: fill 0.25s ease;
 }
 
-.options-menu {
+.menu {
     display: none;
     position: absolute;
     right: 0;
     top: 5px;
     background-color: rgba(255, 255, 255, 1);
-    z-index: 2;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    width: 240px;
+    border-radius: 10px;
+}
+
+.show {
+    display: block;
+}
+
+.content {
+    display: flex;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 15px;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.content:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.option-icon {
+    height: 19px;
+    width: 19px;
+    margin-right: 10px;
+    color: rgb(91, 112, 131);
+}
+
+.content p {
+    color: #000000;
 }
