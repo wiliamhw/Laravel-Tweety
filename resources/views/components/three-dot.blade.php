@@ -9,8 +9,7 @@
         <form id='delete-tweet' method="POST" action="{{ route('delete-tweet', $tweet) }}">
             @csrf
             @method('DELETE')
-            <a href="javascript:;" onclick="document.getElementById('delete-tweet').submit();">
-                <div class="content">
+            <button class="content w-full" type="submit">
                 <svg viewBox="0 0 24 24" class="option-icon">
                     <g>
                         <path
@@ -21,8 +20,7 @@
                     </g>
                 </svg>
                 <p>Delete tweet</p>
-            </div>
-            </a>
+             </button>
         </form>
     </div>
 

@@ -58,11 +58,11 @@ class User extends Authenticatable
         return asset('storage/' . ($value ?: 'profile-banners/default-profile-banner.jpg'));
     }
 
-    public function getAvatarPathAttribute($value) {
+    public function getAvatarPathAttribute() {
         return getRaws($this->avatar);
     }
 
-    public function getProfileBannerPathAttribute($value) {
+    public function getProfileBannerPathAttribute() {
         return getRaws($this->profile_banner);
     }
 

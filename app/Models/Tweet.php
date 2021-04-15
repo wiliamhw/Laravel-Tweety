@@ -19,4 +19,8 @@ class Tweet extends Model
     public function getImageAttribute($value) {
         return $value ? asset('storage/' . $value) : false;
     }
+
+    public function getImagePathAttribute() {
+        return getRaws($this->image);
+    }
 }
