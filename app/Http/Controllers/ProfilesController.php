@@ -42,13 +42,13 @@ class ProfilesController extends Controller
                 Rule::unique('users')->ignore($user),
             ],
             'password' => [
+                'nullable',
                 'string',
-                'required',
                 'min:8',
                 'max:255',
-                'confirmed',
+                'confirmed'
             ],
-            'profile_text' => ['string']
+            'profile_text' => 'nullable|string'
         ]);
 
         if (request('avatar')) {
@@ -60,7 +60,6 @@ class ProfilesController extends Controller
             $attributes['profile_banner'] = request('profile_banner')->store('profile-banners');
             $this->deleteLocalFile($user->profile_banner_path);
         }
-
         $user->update($attributes);
 
         return redirect($user->path())->with('success', 'Profile updated successfully!');
