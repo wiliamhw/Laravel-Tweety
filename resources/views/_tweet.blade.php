@@ -19,7 +19,9 @@
                         <h5 class="font-bold hover:underline">{{ $tweet->user->name }}</h5>
                     </a>
                 </span>
-                <x-three-dot :tweet="$tweet"/>
+                @can('edit', $tweet->user)
+                    <x-three-dot :tweet="$tweet"/>
+                @endcan
             </div>
         </div>
 

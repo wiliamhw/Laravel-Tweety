@@ -4,13 +4,9 @@
 //     var_dump($query->sql, $query->bindings);
 // });
 
+namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TweetsController;
-use App\Http\Controllers\FollowsController;
-use App\Http\Controllers\ProfilesController;
-use App\Http\Controllers\ExploreController;
-use App\Http\Controllers\TweetLikesController;
-use App\Http\Controllers\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +40,9 @@ Route::middleware('auth')->group(function () {
         [FollowsController::class, 'store']
     )->name('follow');
 
+    Route::delete('/tweets/{tweet}', [TweetsController::class, 'destroy'])->name('delete-tweet');
+    Route::get('/explore', [ExploreController::class, 'index'])->name('explore');
+
     Route::middleware('can:edit,user')->group(function () {
         Route::get(
             '/profiles/{user:username}/edit',
@@ -55,8 +54,6 @@ Route::middleware('auth')->group(function () {
             [ProfilesController::class, 'update']
         );
     });
-
-    Route::get('/explore', [ExploreController::class, 'index'])->name('explore');
 });
 
 //Route::post('/alert', function () {

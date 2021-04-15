@@ -7,7 +7,6 @@ use App\Models\Tweet;
 
 class TweetsController extends Controller
 {
-
     public function index()
     {
         return view('tweets.index', [
@@ -41,5 +40,12 @@ class TweetsController extends Controller
         ]);
 
         return redirect()->route('home')->with('success','Tweet posted successfully!');
+    }
+
+    public function destroy(Tweet $tweet)
+    {
+        $this->authorize('edit', $tweet->user);
+        $tweet->delete();
+        return back()->with('success','Tweet deleted successfully!');
     }
 }

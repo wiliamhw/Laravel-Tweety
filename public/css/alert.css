@@ -5,6 +5,7 @@
     width: 450px;
     opacity: 1;
     transition: opacity 1s ease;
+    z-index: 999;
 }
 
 .fade-out {

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use File;
 use Illuminate\Validation\Rule;
 use App\Models\User;
-use File;
 
 class ProfilesController extends Controller
 {
