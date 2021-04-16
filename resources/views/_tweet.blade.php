@@ -1,41 +1,42 @@
-<div class="flex p-4 {{ $loop->last ? '' : 'border-b border-b-gray-400' }}">
-    <div class="mr-2 flex-shrink-0">
-        <a href="{{ $tweet->user->path() }}">
-            <img
-                src="{{ $tweet->user->avatar }}"
-                alt=""
-                class="rounded-full mr-2 hover:opacity-75"
-                width="50"
-                height="50"
-            >
+<article class="hover:bg-gray-800 transition duration-350 ease-in-out">
+    <div class="flex flex-shrink-0 p-4 pb-0">
+        <a href="{{ $tweet->user->path() }}" class="flex-shrink-0 group block">
+            <div class="flex items-center">
+                <div>
+                    <img class="inline-block h-10 w-10 rounded-full"
+                         src="{{ $tweet->user->avatar }}" alt="">
+                </div>
+                <div class="ml-3">
+                    <p class="text-base leading-6 font-medium text-white">
+                        {{ $tweet->user->name }}
+                        <span class="text-sm leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150">
+                            {{ '@' . $tweet->user->username }}  . 16 April
+                        </span>
+                    </p>
+                    @can('edit', $tweet->user)
+                        <x-three-dot :tweet="$tweet"/>
+                    @endcan
+                </div>
+            </div>
         </a>
     </div>
 
-    <div class="flex-col w-full">
-        <div class="relative">
-            <div class="flex justify-between mb-3">
-                <span class="">
-                    <a href="{{ $tweet->user->path() }}">
-                        <h5 class="font-bold hover:underline">{{ $tweet->user->name }}</h5>
-                    </a>
-                </span>
-                @can('edit', $tweet->user)
-                    <x-three-dot :tweet="$tweet"/>
-                @endcan
-            </div>
-        </div>
-
+    <div class="pl-16">
         @if ($tweet->body)
-            <p class="text-sm" style="font-size: 15px; line-height: 1.3125;">
+            <p class="text-base width-auto font-medium text-white flex-shrink">
                 {{ $tweet->body }}
             </p>
         @endif
 
         @if ($tweet->image)
-            <img src="{{ $tweet->image }}" onclick="on({{ $tweet->id }})"
-                 class="mt-4 border border-cool-gray-400 rounded-lg object-cover outline-none cursor-pointer"
-                 style="width: 560px; height: 337px"
-            >
+            <div class="md:flex-shrink pr-6 pt-3">
+                <img class="mt-4 border border-cool-gray-400 rounded-lg object-cover outline-none cursor-pointer w-full h-full"
+                     style="height: 337px;"
+                     src="{{ $tweet->image }}"
+                     onclick="on({{ $tweet->id }})"
+                     alt="">
+            </div>
+
             <div id="{{ $tweet->id }}" class="overlay" onclick="off({{ $tweet->id }})">
                 <div id="overlay-img">
                     <img src="{{ $tweet->image }}">
@@ -45,4 +46,4 @@
 
         <x-like-buttons :tweet="$tweet"/>
     </div>
-</div>
+</article>

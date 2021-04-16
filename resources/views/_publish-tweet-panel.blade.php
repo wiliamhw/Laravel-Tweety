@@ -1,4 +1,4 @@
-<div class="border border-gray-800 rounded-lg pt-6 pb-1 px-8 mb-8">
+<div class="border border-y-0 border-b-none border-gray-800 pt-6 pb-1 px-8">
     <form method="POST" action="/tweets" enctype="multipart/form-data">
         @csrf
 
@@ -68,3 +68,4 @@
         })();
     </script>
 </div>
+<hr class="border-gray-800 border-4"/>

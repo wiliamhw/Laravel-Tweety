@@ -1,6 +1,4 @@
 <x-app>
-    <div>
-        @include ('_publish-tweet-panel')
-        @include ('_timeline', $tweets)
-    </div>
+    @include ('_publish-tweet-panel')
+    @include ('_timeline', $tweets)
 </x-app>
