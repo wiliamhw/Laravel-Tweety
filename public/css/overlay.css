@@ -19,5 +19,8 @@
     max-width: 95vw;
     transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
-    pointer-events:none;
+}
+
+#overlay-img img {
+    max-height: 100vh;
 }

@@ -1,8 +1,9 @@
 <x-master>
-    <section class="px-8">
+    <x-alerts/>
+    <section class="px-8 text-white">
         <main class="container mx-auto">
             <div class="lg:flex lg:justify-between">
-                <div class="lg:w-1/32">
+                <div class="lg:w-1/32 w-1/6 max-w-xs">
                     @include ('_sidebar-links')
                 </div>
 

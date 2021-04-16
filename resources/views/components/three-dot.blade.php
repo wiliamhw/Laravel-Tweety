@@ -1,7 +1,7 @@
 <span id="dropdown" class="absolute right-0 cursor-pointer w-10 h-10
             flex justify-center items-center dot-span"
       onmouseenter="changeColor(this, '#1da1f2')"
-      onmouseleave="changeColor(this, '#000000')"
+      onmouseleave="changeColor(this, '#8899A6')"
       onclick="dropDown(this)"
 >
 

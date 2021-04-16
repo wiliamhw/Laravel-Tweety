@@ -21,3 +21,18 @@ function off(tweet_id) {
     document.getElementById(tweet_id).style.display = "none";
     enableScroll();
 }
+
+function onPreview() {
+    document.getElementById(0).style.display = "block";
+    disableScroll();
+
+    let input = document.getElementById("output-image");
+    let output = document.getElementById("preview-image");
+    output.src = input.src;
+}
+
+function offPreview() {
+    document.getElementById(0).style.display = "none";
+    enableScroll();
+    document.getElementById("preview-image").src = "";
+}
