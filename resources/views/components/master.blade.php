@@ -30,7 +30,7 @@
     <div id="app">
         <section class="px-8 py-4 mb-6">
             <header class="container mx-auto">
-                <a href="{{ route('home') }}">
+                <a href="{{ Auth::check() ? route('home') : '' }}">
                     <svg viewBox="0 0 24 24" class="h-8 w-8 text-white ml-3" fill="currentColor">
                         <g>
                             <path
@@ -45,4 +45,10 @@
     </div>
 </body>
 
+<style>
+    .bg-dim-700 {
+        --bg-opacity: 1;
+        background-color: #192734;
+    }
+</style>
 </html>

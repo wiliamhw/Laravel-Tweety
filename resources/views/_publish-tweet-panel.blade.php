@@ -1,4 +1,4 @@
-<div class="border border-gray-800 rounded-lg py-6 px-8 mb-8">
+<div class="border border-gray-800 rounded-lg pt-6 pb-1 px-8 mb-8">
     <form method="POST" action="/tweets" enctype="multipart/form-data">
         @csrf
 
@@ -9,18 +9,16 @@
             </div>
             <div class="flex-1 px-2 pt-2 mt-2">
                 <textarea id="body" name="body"
-                          class=" bg-transparent text-gray-400 font-medium text-lg w-full"
+                          class="outline-none bg-transparent text-gray-400 font-medium text-lg w-full"
                           rows="2" cols="50" placeholder="What's happening?" spellcheck="false"></textarea>
             </div>
         </div>
-
         <div class="ml-10">
             <img id="output-image" onclick="onPreview()"
                 class="cursor-pointer hidden mt-4 border border-cool-gray-400 rounded-lg object-cover outline-none"
                 style="width: 560px; height: 337px"
             />
         </div>
-
         <div id="0" class="overlay" onclick="offPreview()" style="display: none;">
             <div id="overlay-img">
                 <img id="preview-image"/>
@@ -29,7 +27,6 @@
 
         <div class="flex">
             <div class="w-10"></div>
-
             <div class="w-16 px-2">
                 <div class="flex items-center">
                     <div class="flex-1 text-center px-1 py-1 m-2">
