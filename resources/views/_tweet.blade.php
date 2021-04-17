@@ -1,5 +1,5 @@
 <article class="hover:bg-gray-800 transition duration-350 ease-in-out">
-    <div class="flex flex-shrink-0 p-4 pb-0">
+    <div class="flex flex-shrink-0 p-4 pb-0 justify-between align-middle">
         <a href="{{ $tweet->user->path() }}" class="flex-shrink-0 group block">
             <div class="flex items-center">
                 <div>
@@ -13,12 +13,12 @@
                             {{ '@' . $tweet->user->username }}  . 16 April
                         </span>
                     </p>
-                    @can('edit', $tweet->user)
-                        <x-three-dot :tweet="$tweet"/>
-                    @endcan
                 </div>
             </div>
         </a>
+        @can('edit', $tweet->user)
+            <x-three-dot :tweet="$tweet"/>
+        @endcan
     </div>
 
     <div class="pl-16">
