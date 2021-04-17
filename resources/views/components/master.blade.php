@@ -17,6 +17,7 @@
     <script src="{{ asset('js/alert.js') }}" defer></script>
     <script src="{{ asset('js/three-dot.js') }}" defer></script>
     <script src="{{ asset('js/preview-image.js') }}" defer></script>
+    <script src="{{ asset('js/dynamic-txtarea.js') }}" defer></script>
     <script src="https://unpkg.com/turbolinks" defer></script>
 
     <!-- Styles -->

@@ -29,7 +29,7 @@
         @endif
 
         @if ($tweet->image)
-            <div class="md:flex-shrink pr-6 pt-3">
+            <div class="md:flex-shrink pr-6 pt-3 xl:pr-12">
                 <img class="mt-4 border border-cool-gray-400 rounded-lg object-cover outline-none cursor-pointer w-full h-full"
                      style="height: 337px;"
                      src="{{ $tweet->image }}"

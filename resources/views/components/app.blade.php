@@ -8,7 +8,7 @@
                 </div>
 
                 <div id="middle" class="hide-scrollbar lg:flex-1 mx-5 xl:mx-10 overflow-y-scroll"
-                     style="max-width: 700px; height:92.5vh">
+                     style="max-width: 750px; height:92.5vh">
                     {{ $slot }}
                 </div>
 

@@ -10,12 +10,31 @@
             <div class="flex-1 px-2 pt-2 mt-2">
                 <textarea id="body" name="body"
                           class="outline-none bg-transparent text-gray-400 font-normal text-lg leading-5 font-sans w-full"
-                          rows="2" cols="50" placeholder="What's happening?" spellcheck="false"></textarea>
+                          rows="2" cols="50" placeholder="What's happening?" spellcheck="false"
+                          oninput="resize(this)"
+                ></textarea>
             </div>
         </div>
         <div class="ml-10">
+            <div class="relative">
+                <div id="close-btn" class="hidden absolute cursor-pointer w-10 h-10 flex justify-center items-center">
+                    <div onClick="closePreview()"
+                        class="relative w-10 h-10 flex items-center justify-center text-white p-2 leading-6 rounded-full bg-black hover:bg-gray-700"
+                        style="right: -5px; bottom: -5px"
+                    >
+                        <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke-linecap="round"
+                             stroke-linejoin="round" stroke-width="2" stroke="currentColor">
+                            <g>
+                                <path
+                                    d="M13.414 12l5.793-5.793c.39-.39.39-1.023 0-1.414s-1.023-.39-1.414 0L12 10.586 6.207 4.793c-.39-.39-1.023-.39-1.414 0s-.39 1.023 0 1.414L10.586 12l-5.793 5.793c-.39.39-.39 1.023 0 1.414.195.195.45.293.707.293s.512-.098.707-.293L12 13.414l5.793 5.793c.195.195.45.293.707.293s.512-.098.707-.293c.39-.39.39-1.023 0-1.414L13.414 12z"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
             <img id="output-image" onclick="onPreview()"
-                class="cursor-pointer hidden mt-4 border border-cool-gray-400 rounded-lg object-cover outline-none"
+                class="hidden cursor-pointer mt-4 border border-cool-gray-400 rounded-lg object-cover outline-none"
                 style="width: 560px; height: 337px"
             />
         </div>
@@ -36,19 +55,19 @@
                                 </path>
                             </svg>
                         </label>
-                        <input id="image_tweet" name="image_tweet" accept="image/*" type="file" class="hidden"/>
+                        <input onchange="openPreview()" id="image_tweet" name="image_tweet" accept="image/*" type="file" class="hidden"/>
                     </div>
                 </div>
             </div>
             <div class="flex-1">
-                <button class="bg-blue-400 hover:bg-blue-500 mt-5 text-white font-bold py-2 px-8 rounded-full mr-8 float-right">
+                <button id="tweet-submit-btn" class="bg-blue-400 hover:bg-blue-500 mt-5 text-white font-bold py-2 px-8 rounded-full mr-8 float-right">
                     Tweet
                 </button>
             </div>
         </div>
     </form>
 
-    @error('image_tweet')--}}
+    @error('image_tweet')
         <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
     @enderror
 

@@ -2,6 +2,7 @@
 
 namespace App\Traits;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 trait Followable
 {
@@ -33,5 +34,15 @@ trait Followable
             'follows',
             'user_id', 'following_user_id'
         )->withTimestamps();
+    }
+
+    public function getFollowers() {
+        return DB::table('follows')
+            ->where('following_user_id', $this->id)
+            ->count();
+    }
+
+    public function getFollowings() {
+        return $this->follows()->count();
     }
 }
