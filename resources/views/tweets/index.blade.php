@@ -1,5 +1,4 @@
-<x-app class="pb-14">
+<x-app>
     @include ('_publish-tweet-panel')
     @include ('_timeline', $tweets)
-    {{ $tweets->links()  }}
 </x-app>

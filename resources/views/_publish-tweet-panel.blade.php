@@ -9,7 +9,7 @@
             </div>
             <div class="flex-1 px-2 pt-2 mt-2">
                 <textarea id="body" name="body"
-                          class="outline-none bg-transparent text-gray-400 font-medium text-lg w-full"
+                          class="outline-none bg-transparent text-gray-400 font-normal text-lg leading-5 font-sans w-full"
                           rows="2" cols="50" placeholder="What's happening?" spellcheck="false"></textarea>
             </div>
         </div>

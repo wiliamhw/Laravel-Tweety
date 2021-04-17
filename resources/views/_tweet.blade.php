@@ -23,7 +23,7 @@
 
     <div class="pl-16">
         @if ($tweet->body)
-            <p class="text-base width-auto font-medium text-white flex-shrink">
+            <p class="text-base font-normal leading-5 font-sans width-auto text-white flex-shrink">
                 {{ $tweet->body }}
             </p>
         @endif

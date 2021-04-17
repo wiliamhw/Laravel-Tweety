@@ -12,3 +12,4 @@
         </li>
     </ul>
 </div>
+{{ $tweets->links()  }}

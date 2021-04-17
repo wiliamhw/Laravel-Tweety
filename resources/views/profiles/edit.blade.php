@@ -1,10 +1,10 @@
 <x-app>
-    <form method="POST" action="{{ $user->path() }}" enctype="multipart/form-data">
+    <form method="POST" action="{{ $user->path() }}" enctype="multipart/form-data" class="text-black">
         @csrf
         @method('PATCH')
 
         <div class="mb-6">
-            <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+            <label class="block mb-2 uppercase font-bold text-xs text-gray-400"
                    for="name"
             >
                 Name
@@ -24,7 +24,7 @@
         </div>
 
         <div class="mb-6">
-            <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+            <label class="block mb-2 uppercase font-bold text-xs text-gray-400"
                    for="username"
             >
                 Username
@@ -44,7 +44,7 @@
         </div>
 
         <div class="mb-6">
-            <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+            <label class="block mb-2 uppercase font-bold text-xs text-gray-400"
                    for="profile_text"
             >
                 Profile Text
@@ -60,14 +60,14 @@
         </div>
 
         <div class="mb-6">
-            <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+            <label class="block mb-2 uppercase font-bold text-xs text-gray-400"
                   for="avatar"
             >
                 Avatar
             </label>
 
             <div class="flex">
-                <input class="border border-gray-400 p-2 w-full"
+                <input class="border border-gray-400 text-white p-2 w-full"
                        type="file"
                        name="avatar"
                        id="avatar"
@@ -86,14 +86,14 @@
         </div>
 
         <div class="mb-6">
-            <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+            <label class="block mb-2 uppercase font-bold text-xs text-gray-400"
                    for="profile_banner"
             >
                 Profile Banner
             </label>
 
             <div class="flex">
-                <input class="border border-gray-400 p-2 w-full"
+                <input class="border border-gray-400 text-white p-2 w-full"
                        type="file"
                        name="profile_banner"
                        id="profile_banner"
@@ -112,7 +112,7 @@
         </div>
 
         <div class="mb-6">
-            <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+            <label class="block mb-2 uppercase font-bold text-xs text-gray-400"
                    for="email"
             >
                 Email
@@ -132,7 +132,7 @@
         </div>
 
         <div class="mb-6">
-            <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+            <label class="block mb-2 uppercase font-bold text-xs text-gray-400"
                    for="password"
             >
                 Password
@@ -150,7 +150,7 @@
         </div>
 
         <div class="mb-6">
-            <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+            <label class="block mb-2 uppercase font-bold text-xs text-gray-400"
                    for="password_confirmation"
             >
                 Password Confirmation
@@ -174,7 +174,7 @@
                 Submit
             </button>
 
-            <a href="{{ $user->path() }}" class="hover:underline">Cancel</a>
+            <a href="{{ $user->path() }}" class="hover:underline text-white">Cancel</a>
         </div>
     </form>
 </x-app>
