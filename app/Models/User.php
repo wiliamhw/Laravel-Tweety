@@ -87,8 +87,11 @@ class User extends Authenticatable
             else if ($tweet->created_at->diffInHours(now()) > 0) {
                 $tweet['interval'] = $tweet->created_at->diffInHours(now()) . 'h';
             }
-            else {
+            else if ($tweet->created_at->diffInMinutes(now()) > 0) {
                 $tweet['interval'] = $tweet->created_at->diffInMinutes(now()) . 'm';
+            }
+            else {
+                $tweet['interval'] = 'now';
             }
         }
         return $tweets;

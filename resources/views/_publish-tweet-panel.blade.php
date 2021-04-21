@@ -2,6 +2,7 @@
     <form method="POST" action="/tweets" enctype="multipart/form-data">
         @csrf
 
+        <!-- Avatar and textarea section -->
         <div class="flex">
             <div class="m-2 w-10 py-1">
                 <img class="inline-block h-10 w-10 rounded-full"
@@ -15,6 +16,8 @@
                 ></textarea>
             </div>
         </div>
+
+        <!-- Image preview section -->
         <div class="ml-10">
             <div class="relative">
                 <div id="close-btn" class="hidden absolute cursor-pointer w-10 h-10 flex justify-center items-center">
@@ -34,22 +37,25 @@
             </div>
 
             <img id="output-image" onclick="onPreview()"
-                class="hidden cursor-pointer mt-4 border border-cool-gray-400 rounded-lg object-cover outline-none"
-                style="width: 560px; height: 337px"
+                class="hidden cursor-pointer mt-4 border border-cool-gray-600 outline-none rounded-lg object-cover"
+                style="height: 337px"
             />
         </div>
+        <!-- Image preview overlay section -->
         <div id="0" class="overlay" onclick="offPreview()" style="display: none;">
             <div id="overlay-img">
                 <img id="preview-image"/>
             </div>
         </div>
 
+        <!-- Upload image section -->
         <div class="flex">
             <div class="w-10"></div>
             <div class="w-16 px-2">
                 <div class="flex items-center">
                     <div class="flex-1 text-center px-1 py-1 m-2">
-                        <label for="image_tweet" class="cursor-pointer mt-1 group flex items-center text-blue-400 px-2 py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300">
+                        <label for="image_tweet" class="cursor-pointer mt-1 group flex items-center text-blue-400 px-2
+                            py-2 text-base leading-6 font-medium rounded-full hover:bg-gray-800 hover:text-blue-300">
                             <svg class="text-center h-7 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
                                 <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
                                 </path>

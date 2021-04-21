@@ -1,5 +1,9 @@
 <x-app>
-    <div class="border border-gray-800 border-y-0 text-white font-sans">
+    <form method="POST" action="{{ $user->path() }}" enctype="multipart/form-data">
+        @csrf
+        @method('PATCH')
+
+        <div class="border border-gray-800 border-y-0 text-white font-sans">
         <!-- Profile Banner -->
         <div class="w-full bg-cover bg-no-repeat bg-center"
              style="height: 200px;background-image: url({{ $user->profile_banner }});">
@@ -72,15 +76,14 @@
             <div id="profile_text-div" class="border border-gray-800 border-4 border-2 rounded-md">
                 <div class="m-3">
                     <label class="block mb-2 uppercase font-bold text-xs text-gray-400" for="profile_text">Profile Text</label>
-                    <textarea class="bg-transparent outline-none w-full"
-                            type="text"
-                            id="profile_text"
-                            name="profile_text"
+                    <textarea class="bg-transparent outline-none w-full leading-5"
+                            type="text" id="profile_text" name="profile_text"
                             onfocusin="changeBorder('profile_text-div', 'in')"
                             onfocusout="changeBorder('profile_text-div', 'out')"
-                            autocomplete="off"
+                            autocomplete="off" spellcheck="false"
                             oninput="resize(this)"
                     >{{ $user->profile_text }}</textarea>
+                    <script>resize()</script>
                     @error('profile_text')
                     <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                     @enderror
@@ -167,4 +170,5 @@
             </button>
         </div>
     </div>
+    </form>
 </x-app>
