@@ -1,180 +1,170 @@
 <x-app>
-    <form method="POST" action="{{ $user->path() }}" enctype="multipart/form-data" class="text-black">
-        @csrf
-        @method('PATCH')
-
-        <div class="mb-6">
-            <label class="block mb-2 uppercase font-bold text-xs text-gray-400"
-                   for="name"
-            >
-                Name
-            </label>
-
-            <input class="border border-gray-400 p-2 w-full"
-                   type="text"
-                   name="name"
-                   id="name"
-                   value="{{ $user->name }}"
-                   required
-            >
-
-            @error('name')
-                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-            @enderror
+    <div class="border border-gray-800 border-y-0 text-white font-sans">
+        <!-- Profile Banner -->
+        <div class="w-full bg-cover bg-no-repeat bg-center"
+             style="height: 200px;background-image: url({{ $user->profile_banner }});">
         </div>
-
-        <div class="mb-6">
-            <label class="block mb-2 uppercase font-bold text-xs text-gray-400"
-                   for="username"
-            >
-                Username
-            </label>
-
-            <input class="border border-gray-400 p-2 w-full"
-                   type="text"
-                   name="username"
-                   id="username"
-                   value="{{ $user->username }}"
-                   required
-            >
-
-            @error('username')
-                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-            @enderror
-        </div>
-
-        <div class="mb-6">
-            <label class="block mb-2 uppercase font-bold text-xs text-gray-400"
-                   for="profile_text"
-            >
-                Profile Text
-            </label>
-            <textarea id="profile_text"
-                      name="profile_text"
-                      class="border border-gray-400 p-2 w-full"
-            >{{ $user->profile_text }}</textarea>
-
-            @error('profile_text')
-                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-            @enderror
-        </div>
-
-        <div class="mb-6">
-            <label class="block mb-2 uppercase font-bold text-xs text-gray-400"
-                  for="avatar"
-            >
-                Avatar
-            </label>
-
-            <div class="flex">
-                <input class="border border-gray-400 text-white p-2 w-full"
-                       type="file"
-                       name="avatar"
-                       id="avatar"
-                       accept="image/*"
-                >
-
-                <img src="{{ $user->avatar }}"
-                     alt="your avatar"
-                     width="40"
-                >
+        <div class="p-4">
+            <div class="relative flex w-full">
+                <!-- Avatar -->
+                <div class="flex flex-1">
+                    <div style="margin-top: -6rem">
+                        <div style="height: 9rem;width: 9rem;" class="md rounded-full relative avatar">
+                            <img style="height: 9rem;width: 9rem;"
+                                 class="md rounded-full relative border-4 border-gray-900"
+                                 src="{{ $user->avatar }}"
+                                 alt=""
+                            />
+                            <div class="absolute"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            @error('avatar')
-                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-            @enderror
         </div>
 
-        <div class="mb-6">
-            <label class="block mb-2 uppercase font-bold text-xs text-gray-400"
-                   for="profile_banner"
-            >
-                Profile Banner
-            </label>
-
-            <div class="flex">
-                <input class="border border-gray-400 text-white p-2 w-full"
-                       type="file"
-                       name="profile_banner"
-                       id="profile_banner"
-                       accept="image/*"
-                >
-
-                <img src="{{ $user->profile_banner }}"
-                     alt="your profile_banner"
-                     width="125"
-                >
+        <!-- Name section -->
+        <div class="flex-col px-4 py-3 bg-transparent">
+            <div id="name-div" class="border border-gray-800 border-4 border-2 rounded-md">
+                <div class="m-3">
+                    <label class="block mb-2 uppercase font-bold text-xs text-gray-400" for="name">Name</label>
+                    <input class="bg-transparent outline-none w-full"
+                           type="text"
+                           name="name"
+                           id="name"
+                           onfocusin="changeBorder('name-div', 'in')"
+                           onfocusout="changeBorder('name-div', 'out')"
+                           autocomplete="off"
+                           value="{{ $user->name }}"
+                           required
+                    >
+                    @error('name')
+                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                    @enderror
+                </div>
             </div>
-
-            @error('avatar')
-                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-            @enderror
         </div>
 
-        <div class="mb-6">
-            <label class="block mb-2 uppercase font-bold text-xs text-gray-400"
-                   for="email"
-            >
-                Email
-            </label>
+        <!-- Username section -->
+        <div class="flex-col px-4 py-3 bg-transparent">
+            <div id="username-div" class="border border-gray-800 border-4 border-2 rounded-md">
+                <div class="m-3">
+                    <label class="block mb-2 uppercase font-bold text-xs text-gray-400" for="username">Username</label>
 
-            <input class="border border-gray-400 p-2 w-full"
-                   type="email"
-                   name="email"
-                   id="email"
-                   value="{{ $user->email }}"
-                   required
-            >
-
-            @error('email')
-                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-            @enderror
+                    <input class="bg-transparent outline-none w-full"
+                           type="text"
+                           name="username"
+                           id="username"
+                           onfocusin="changeBorder('username-div', 'in')"
+                           onfocusout="changeBorder('username-div', 'out')"
+                           autocomplete="off"
+                           value="{{ $user->username }}"
+                           required
+                    >
+                    @error('username')
+                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                    @enderror
+                </div>
+            </div>
         </div>
 
-        <div class="mb-6">
-            <label class="block mb-2 uppercase font-bold text-xs text-gray-400"
-                   for="password"
-            >
-                Password
-            </label>
-
-            <input class="border border-gray-400 p-2 w-full"
-                   type="password"
-                   name="password"
-                   id="password"
-            >
-
-            @error('password')
-                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-            @enderror
+        <!-- Profile text section -->
+        <div class="flex-col px-4 py-3 bg-transparent">
+            <div id="profile_text-div" class="border border-gray-800 border-4 border-2 rounded-md">
+                <div class="m-3">
+                    <label class="block mb-2 uppercase font-bold text-xs text-gray-400" for="profile_text">Profile Text</label>
+                    <textarea class="bg-transparent outline-none w-full"
+                            type="text"
+                            id="profile_text"
+                            name="profile_text"
+                            onfocusin="changeBorder('profile_text-div', 'in')"
+                            onfocusout="changeBorder('profile_text-div', 'out')"
+                            autocomplete="off"
+                            oninput="resize(this)"
+                    >{{ $user->profile_text }}</textarea>
+                    @error('profile_text')
+                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                    @enderror
+                </div>
+            </div>
         </div>
 
-        <div class="mb-6">
-            <label class="block mb-2 uppercase font-bold text-xs text-gray-400"
-                   for="password_confirmation"
-            >
-                Password Confirmation
-            </label>
+        <!-- Email section -->
+        <div class="flex-col px-4 py-3 bg-transparent">
+            <div id="email-div" class="border border-gray-800 border-4 border-2 rounded-md">
+                <div class="m-3">
+                    <label class="block mb-2 uppercase font-bold text-xs text-gray-400" for="email">Email</label>
 
-            <input class="border border-gray-400 p-2 w-full"
-                   type="password"
-                   name="password_confirmation"
-                   id="password_confirmation"
-            >
-
-            @error('password_confirmation')
-                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-            @enderror
+                    <input class="bg-transparent outline-none w-full"
+                           type="text"
+                           name="email"
+                           id="email"
+                           onfocusin="changeBorder('email-div', 'in')"
+                           onfocusout="changeBorder('email-div', 'out')"
+                           autocomplete="off"
+                           value="{{ $user->email }}"
+                           required
+                    >
+                    @error('email')
+                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                    @enderror
+                </div>
+            </div>
         </div>
 
-        <div class="mb-6">
+        <!-- Password section -->
+        <div class="flex-col px-4 py-3 bg-transparent">
+            <div id="password-div" class="border border-gray-800 border-4 border-2 rounded-md">
+                <div class="m-3">
+                    <label class="block mb-2 uppercase font-bold text-xs text-gray-400" for="password">Password</label>
+
+                    <input class="bg-transparent outline-none w-full"
+                           type="password"
+                           name="password"
+                           id="password"
+                           onfocusin="changeBorder('password-div', 'in')"
+                           onfocusout="changeBorder('password-div', 'out')"
+                           autocomplete="off"
+                    >
+                    @error('password')
+                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                    @enderror
+                </div>
+            </div>
+        </div>
+
+        <!-- Confirm password section -->
+        <div class="flex-col px-4 py-3 bg-transparent">
+            <div id="password_confirmation-div" class="border border-gray-800 border-4 border-2 rounded-md">
+                <div class="m-3">
+                    <label class="block mb-2 uppercase font-bold text-xs text-gray-400" for="password_confirmation">
+                        Password Confirmation
+                    </label>
+
+                    <input class="bg-transparent outline-none w-full"
+                           type="password"
+                           name="password_confirmation"
+                           id="password_confirmation"
+                           onfocusin="changeBorder('password_confirmation-div', 'in')"
+                           onfocusout="changeBorder('password_confirmation-div', 'out')"
+                           autocomplete="off"
+                    >
+                    @error('password_confirmation')
+                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                    @enderror
+                </div>
+            </div>
+        </div>
+
+        <!-- Button section -->
+        <div class="px-4 py-3 pb-6 flex justify-end align-middle">
+            <div class="self-center">
+                <a href="{{ $user->path() }}" class="hover:underline text-white">Cancel</a>
+            </div>
             <button type="submit"
-                    class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4"
+                    class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 ml-4 rounded-full font-bold"
             >
                 Submit
             </button>
-
-            <a href="{{ $user->path() }}" class="hover:underline text-white">Cancel</a>
         </div>
-    </form>
+    </div>
 </x-app>

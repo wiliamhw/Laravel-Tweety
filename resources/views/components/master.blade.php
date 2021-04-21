@@ -18,6 +18,7 @@
     <script src="{{ asset('js/three-dot.js') }}" defer></script>
     <script src="{{ asset('js/preview-image.js') }}" defer></script>
     <script src="{{ asset('js/dynamic-txtarea.js') }}" defer></script>
+    <script src="{{ asset('js/change-border.js') }}" defer></script>
     <script src="https://unpkg.com/turbolinks" defer></script>
 
     <!-- Styles -->
@@ -51,6 +52,9 @@
     }
     .hide-scrollbar::-webkit-scrollbar {
         display: none;
+    }
+    textarea {
+        resize: none;
     }
 </style>
 </html>
