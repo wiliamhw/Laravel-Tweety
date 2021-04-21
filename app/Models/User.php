@@ -65,14 +65,33 @@ class User extends Authenticatable
         return getRaws($this->profile_banner);
     }
 
-    public function timeline() {
+    public function timeline($onlyThisUser = False) {
         $follower = $this->follows()->pluck('id');
 
-        return Tweet::whereIn('user_id', $follower)
-            ->orWhere('user_id', $this->id)
-            ->withLikes()
-            ->latest()
-            ->paginate(getPaginate());
+        if ($onlyThisUser) {
+            $tweets = Tweet::where('user_id', $this->id)
+                ->withLikes()
+                ->latest()
+                ->paginate(getPaginate());
+        } else {
+            $tweets = Tweet::where('user_id', $this->id)
+                ->orWhereIn('user_id', $follower)
+                ->withLikes()
+                ->latest()
+                ->paginate(getPaginate());
+        }
+        foreach ($tweets as $tweet) {
+            if ($tweet->created_at->diffInDays(now()) != 0) {
+                $tweet['interval'] = $tweet->created_at->isoFormat('D MMMM');
+            }
+            else if ($tweet->created_at->diffInHours(now()) > 0) {
+                $tweet['interval'] = $tweet->created_at->diffInHours(now()) . 'h';
+            }
+            else {
+                $tweet['interval'] = $tweet->created_at->diffInMinutes(now()) . 'm';
+            }
+        }
+        return $tweets;
     }
 
     public function tweets() {

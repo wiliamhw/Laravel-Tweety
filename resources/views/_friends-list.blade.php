@@ -7,7 +7,12 @@
 
     <hr class="border-gray-800">
     @forelse (current_user()->follows as $user)
-        <div class="flex flex-shrink-0 pb-4 hover:bg-gray-800 hover:text-blue-300">
+        <div class="flex flex-shrink-0 pb-4
+            {{ Request::is('profiles/' . $user->username)
+                ? 'bg-gray-900 text-blue-300'
+                : 'hover:bg-gray-800 hover:text-blue-300'
+            }}
+        ">
             <a href="{{ route('profile', $user) }}">
                 <div class="flex-1 ">
                     <div class="flex items-center w-48">

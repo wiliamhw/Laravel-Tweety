@@ -10,7 +10,7 @@
                     <p class="text-base leading-6 font-medium text-white">
                         {{ $tweet->user->name }}
                         <span class="text-sm leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150">
-                            {{ '@' . $tweet->user->username }}  . 16 April
+                            {{ '@' . $tweet->user->username }} · {{ $tweet->interval }}
                         </span>
                     </p>
                 </div>
@@ -29,7 +29,7 @@
         @endif
 
         @if ($tweet->image)
-            <div class="md:flex-shrink pr-6 pt-3 xl:pr-12">
+            <div class="md:flex-shrink pr-6 pt-3 xl:h-96 xl:pr-8">
                 <img class="mt-4 border border-cool-gray-400 rounded-lg object-cover outline-none cursor-pointer w-full h-full"
                      style="height: 337px;"
                      src="{{ $tweet->image }}"
