@@ -9,7 +9,9 @@
              style="height: 200px;background-image: url({{ $user->profile_banner }});">
             <div class="absolute left-0 right-0 top-0 bottom-0 flex justify-center items-center"
                  style="background-color: rgba(0, 0, 0, 0.3)">
-                <div class="h-11 w-11 rounded-full p-2 hover:bg-white hover:bg-opacity-25">
+
+                <label for="profile_banner"
+                       class="cursor-pointer h-11 w-11 rounded-full p-2 hover:bg-white hover:bg-opacity-25">
                     <svg viewBox="0 0 24 24" fill="white">
                         <g>
                             <path
@@ -19,8 +21,10 @@
                             </path>
                         </g>
                     </svg>
-                </div>
-                <div class="ml-8 h-11 w-11 rounded-full p-2 hover:bg-white hover:bg-opacity-25">
+                </label>
+                <input id="profile_banner" name="profile_banner" accept="image/*" type="file" class="hidden"/>
+
+                <div class="ml-8 cursor-pointer h-11 w-11 rounded-full p-2 hover:bg-white hover:bg-opacity-25">
                     <svg viewBox="0 0 24 24" fill="white">
                         <g>
                             <path
@@ -44,7 +48,9 @@
                             />
                             <div class="absolute rounded-full left-0 right-0 top-0 bottom-0 flex justify-center items-center"
                                  style="background-color: rgba(0, 0, 0, 0.3)">
-                                <div class="h-11 w-11 rounded-full p-2 hover:bg-white hover:bg-opacity-25">
+
+                                <label for="avatar"
+                                       class="h-11 w-11 cursor-pointer rounded-full p-2 hover:bg-white hover:bg-opacity-25">
                                     <svg viewBox="0 0 24 24" fill="white">
                                         <g>
                                             <path
@@ -54,7 +60,9 @@
                                             </path>
                                         </g>
                                     </svg>
-                                </div>
+                                </label>
+                                <input id="avatar" name="avatar" accept="image/*" type="file" class="hidden"/>
+
                             </div>
                         </div>
                     </div>
@@ -64,7 +72,7 @@
 
         <!-- Name section -->
         <div class="flex-col px-4 py-3 bg-transparent">
-            <div id="name-div" class="border border-gray-800 border-4 border-2 rounded-md">
+            <div id="name-div" class="border border-gray-700 border-4 border-2 rounded-md">
                 <div class="m-3">
                     <label class="block mb-2 uppercase font-bold text-xs text-gray-400" for="name">Name</label>
                     <input class="bg-transparent outline-none w-full"
@@ -86,7 +94,7 @@
 
         <!-- Username section -->
         <div class="flex-col px-4 py-3 bg-transparent">
-            <div id="username-div" class="border border-gray-800 border-4 border-2 rounded-md">
+            <div id="username-div" class="border border-gray-700 border-4 border-2 rounded-md">
                 <div class="m-3">
                     <label class="block mb-2 uppercase font-bold text-xs text-gray-400" for="username">Username</label>
 
@@ -109,7 +117,7 @@
 
         <!-- Profile text section -->
         <div class="flex-col px-4 py-3 bg-transparent">
-            <div id="profile_text-div" class="border border-gray-800 border-4 border-2 rounded-md">
+            <div id="profile_text-div" class="border border-gray-700 border-4 border-2 rounded-md">
                 <div class="m-3">
                     <label class="block mb-2 uppercase font-bold text-xs text-gray-400" for="profile_text">Profile Text</label>
                     <textarea class="bg-transparent outline-none w-full leading-5"
@@ -129,7 +137,7 @@
 
         <!-- Email section -->
         <div class="flex-col px-4 py-3 bg-transparent">
-            <div id="email-div" class="border border-gray-800 border-4 border-2 rounded-md">
+            <div id="email-div" class="border border-gray-700 border-4 border-2 rounded-md">
                 <div class="m-3">
                     <label class="block mb-2 uppercase font-bold text-xs text-gray-400" for="email">Email</label>
 
@@ -152,7 +160,7 @@
 
         <!-- Password section -->
         <div class="flex-col px-4 py-3 bg-transparent">
-            <div id="password-div" class="border border-gray-800 border-4 border-2 rounded-md">
+            <div id="password-div" class="border border-gray-700 border-4 border-2 rounded-md">
                 <div class="m-3">
                     <label class="block mb-2 uppercase font-bold text-xs text-gray-400" for="password">Password</label>
 
@@ -173,7 +181,7 @@
 
         <!-- Confirm password section -->
         <div class="flex-col px-4 py-3 bg-transparent">
-            <div id="password_confirmation-div" class="border border-gray-800 border-4 border-2 rounded-md">
+            <div id="password_confirmation-div" class="border border-gray-700 border-4 border-2 rounded-md">
                 <div class="m-3">
                     <label class="block mb-2 uppercase font-bold text-xs text-gray-400" for="password_confirmation">
                         Password Confirmation
