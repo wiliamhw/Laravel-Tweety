@@ -11,7 +11,7 @@
                     <div style="margin-top: -6rem">
                         <div style="height: 9rem;width: 9rem;" class="md rounded-full relative avatar">
                             <img style="height: 9rem;width: 9rem;"
-                                class="md rounded-full relative border-4 border-gray-900"
+                                class="md rounded-full relative border-4 border-gray-900 object-cover"
                                 src="{{ $user->avatar }}"
                                 alt=""
                             />
