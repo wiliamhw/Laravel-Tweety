@@ -8,8 +8,8 @@
         <div class="relative w-full bg-cover bg-no-repeat bg-center"
              style="height: 200px;background-image: url({{ $user->profile_banner }});">
             <div class="absolute left-0 right-0 top-0 bottom-0 flex justify-center items-center"
-                 style="background-color: rgba(0, 0, 0, 0.37)">
-                <div class="h-7 w-7">
+                 style="background-color: rgba(0, 0, 0, 0.3)">
+                <div class="h-11 w-11 rounded-full p-2 hover:bg-white hover:bg-opacity-25">
                     <svg viewBox="0 0 24 24" fill="white">
                         <g>
                             <path
@@ -20,7 +20,7 @@
                         </g>
                     </svg>
                 </div>
-                <div class="ml-8 h-7 w-7">
+                <div class="ml-8 h-11 w-11 rounded-full p-2 hover:bg-white hover:bg-opacity-25">
                     <svg viewBox="0 0 24 24" fill="white">
                         <g>
                             <path
@@ -43,8 +43,8 @@
                                  alt=""
                             />
                             <div class="absolute rounded-full left-0 right-0 top-0 bottom-0 flex justify-center items-center"
-                                 style="background-color: rgba(0, 0, 0, 0.37)">
-                                <div class="h-7 w-7">
+                                 style="background-color: rgba(0, 0, 0, 0.3)">
+                                <div class="h-11 w-11 rounded-full p-2 hover:bg-white hover:bg-opacity-25">
                                     <svg viewBox="0 0 24 24" fill="white">
                                         <g>
                                             <path
