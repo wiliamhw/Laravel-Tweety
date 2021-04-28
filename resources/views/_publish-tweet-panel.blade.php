@@ -37,7 +37,7 @@
             </div>
 
             <img id="output-image" onclick="onPreview()"
-                class="hidden cursor-pointer mt-4 border border-cool-gray-600 outline-none rounded-lg object-cover"
+                class="hidden w-full h-full cursor-pointer mt-4 border border-cool-gray-600 outline-none rounded-lg object-cover"
                 style="height: 337px"
             />
         </div>
@@ -61,7 +61,8 @@
                                 </path>
                             </svg>
                         </label>
-                        <input onchange="openPreview()" id="image_tweet" name="image_tweet" accept="image/*" type="file" class="hidden"/>
+                        <input onchange="openPreview('image_tweet', 'close-btn', 'output-image')"
+                            id="image_tweet" name="image_tweet" accept="image/*" type="file" class="hidden"/>
                     </div>
                 </div>
             </div>

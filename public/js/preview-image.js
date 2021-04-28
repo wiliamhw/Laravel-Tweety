@@ -1,13 +1,13 @@
 let input, button, output;
 
-function initialize() {
-    input = document.getElementById("image_tweet");
-    button = document.getElementById("close-btn");
-    output = document.getElementById("output-image");
+function initialize(inputId, buttonId, outputId) {
+    input = document.getElementById(inputId);
+    button = document.getElementById(buttonId);
+    output = document.getElementById(outputId);
 }
 
-function openPreview() {
-    initialize();
+function openPreview(inputId, buttonId, outputId) {
+    initialize(inputId, buttonId, outputId);
     let reader = new FileReader();
     reader.onload = function () {
         output.src = reader.result;
