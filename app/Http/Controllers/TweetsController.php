@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use File;
+use App\Services\DeleteFileService;
 use App\Models\Tweet;
 
 class TweetsController extends Controller
@@ -42,22 +42,10 @@ class TweetsController extends Controller
         return redirect()->route('home')->with('success','Tweet posted successfully!');
     }
 
-    public function destroy(Tweet $tweet)
+    public function destroy(Tweet $tweet, DeleteFileService $deleteFileService)
     {
         $this->authorize('edit', $tweet->user);
-        $this->deleteImage($tweet->image_path);
+        $deleteFileService->deleteLocalFile($tweet->image_path);
         $tweet->delete();
-        return back()->with('success','Tweet deleted successfully!');
-    }
-
-    public function deleteImage($path_to_file)
-    {
-        if (!$path_to_file) return;
-
-        if (File::exists(public_path($path_to_file))) {
-            File::delete(public_path($path_to_file));
-        } else {
-            abort(404, 'File does not exists');
-        }
     }
 }

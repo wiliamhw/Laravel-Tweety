@@ -5,7 +5,7 @@
 
         <div class="border border-gray-800 border-y-0 text-white font-sans">
         <!-- Profile Banner -->
-        <div class="relative w-full bg-cover bg-no-repeat bg-center"
+        <div id="profile_banner_output" class="relative w-full bg-cover bg-no-repeat bg-center"
              style="height: 200px;background-image: url({{ $user->profile_banner }});">
             <div class="absolute left-0 right-0 top-0 bottom-0 flex justify-center items-center"
                  style="background-color: rgba(0, 0, 0, 0.3)">
@@ -22,9 +22,13 @@
                         </g>
                     </svg>
                 </label>
-                <input id="profile_banner" name="profile_banner" accept="image/*" type="file" class="hidden"/>
+                <input onchange="displayChange('profile_banner', 'profile_banner_output', 'profile_banner_button')"
+                    id="profile_banner" name="profile_banner" accept="image/*" type="file" class="hidden"/>
 
-                <div class="ml-8 cursor-pointer h-11 w-11 rounded-full p-2 hover:bg-white hover:bg-opacity-25">
+                <!-- Cancel button -->
+                <div onclick="rollBackChange('profile_banner', 'profile_banner_output', 'profile_banner_button')"
+                     id="profile_banner_button"
+                     class="hidden ml-8 cursor-pointer h-11 w-11 rounded-full p-2 hover:bg-white hover:bg-opacity-25">
                     <svg viewBox="0 0 24 24" fill="white">
                         <g>
                             <path
@@ -41,8 +45,8 @@
                 <div class="flex flex-1">
                     <div style="margin-top: -6rem">
                         <div style="height: 9rem;width: 9rem;" class="relative rounded-full avatar">
-                            <img style="height: 9rem;width: 9rem;"
-                                 class="rounded-full relative border-4 border-gray-900"
+                            <img id="avatar_output" style="height: 9rem;width: 9rem;"
+                                 class="rounded-full relative border-4 border-gray-900 object-cover"
                                  src="{{ $user->avatar }}"
                                  alt=""
                             />
@@ -61,7 +65,8 @@
                                         </g>
                                     </svg>
                                 </label>
-                                <input id="avatar" name="avatar" accept="image/*" type="file" class="hidden"/>
+                                <input onchange="displayChange('avatar', 'avatar_output', null, false)"
+                                    id="avatar" name="avatar" accept="image/*" type="file" class="hidden"/>
 
                             </div>
                         </div>

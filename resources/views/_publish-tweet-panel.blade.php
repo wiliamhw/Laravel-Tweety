@@ -61,7 +61,7 @@
                                 </path>
                             </svg>
                         </label>
-                        <input onchange="openPreview('image_tweet', 'close-btn', 'output-image')"
+                        <input onchange="openPreview('image_tweet', 'output-image', 'close-btn')"
                             id="image_tweet" name="image_tweet" accept="image/*" type="file" class="hidden"/>
                     </div>
                 </div>
