@@ -4,7 +4,7 @@
             @csrf
             <button type="submit"
                     class="flex items-center
-                            {{ $tweet->isLikedBy(current_user()) ? 'text-blue-500' : 'text-gray-500' }}
+                            {{ $tweet->isLikedBy(auth()->user()) ? 'text-blue-500' : 'text-gray-500' }}
                             hover:text-green-500 transition duration-350 ease-in-out">
                 <svg viewBox="0 0 20 20"
                      class="mr-1 w-3"
@@ -33,7 +33,7 @@
             @method('DELETE')
             <button type="submit"
                     class="flex items-center
-                        {{ $tweet->isDislikedBy(current_user()) ? 'text-blue-500' : 'text-gray-500' }}
+                        {{ $tweet->isDislikedBy(auth()->user()) ? 'text-blue-500' : 'text-gray-500' }}
                         hover:text-red-500 transition duration-350 ease-in-out">
                 <svg viewBox="0 0 20 20"
                      class="mr-1 w-3"

@@ -6,7 +6,7 @@
     </div>
 
     <hr class="border-gray-800">
-    @forelse (current_user()->follows as $user)
+    @forelse (auth()->user()->follows as $user)
         <div class="flex flex-shrink-0 pb-4
             {{ Request::is('profiles/' . $user->username)
                 ? 'bg-gray-900 text-blue-300'

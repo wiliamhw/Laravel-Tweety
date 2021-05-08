@@ -1,15 +1,11 @@
 <?php
 
-function current_user() {
-    return auth()->user();
-}
-
 function getRaws($target) {
     $raws = explode('/', $target);
     $new_raws = [];
 
     for ($i = 0; $i < count($raws); $i++) {
-        if ($i < 3) continue;
+        if ($i < 4) continue;
         array_push($new_raws, $raws[$i]);
     }
 

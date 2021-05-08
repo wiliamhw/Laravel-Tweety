@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Traits\Followable;
+use Illuminate\Support\Facades\Cache;
 
 class User extends Authenticatable
 {
@@ -70,12 +71,14 @@ class User extends Authenticatable
 
         if ($onlyThisUser) {
             $tweets = Tweet::where('user_id', $this->id)
+                ->with('user')
                 ->withLikes()
                 ->latest()
                 ->paginate(getPaginate());
         } else {
             $tweets = Tweet::where('user_id', $this->id)
                 ->orWhereIn('user_id', $follower)
+                ->with('user')
                 ->withLikes()
                 ->latest()
                 ->paginate(getPaginate());

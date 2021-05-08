@@ -45,7 +45,11 @@ class TweetsController extends Controller
     public function destroy(Tweet $tweet, DeleteFileService $deleteFileService)
     {
         $this->authorize('edit', $tweet->user);
-        $deleteFileService->deleteLocalFile($tweet->image_path);
-        $tweet->delete();
+        $response = $deleteFileService->deleteLocalFile($tweet->image_path);
+        if ($response['type'] == 'success') {
+            $tweet->delete();
+            $response['message'] = 'Tweet successfully deleted';
+        }
+        return back()->with($response['type'], $response['message']);
     }
 }
