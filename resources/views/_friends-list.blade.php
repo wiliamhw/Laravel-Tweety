@@ -16,15 +16,16 @@
             <a href="{{ route('profile', $user) }}">
                 <div class="flex-1 ">
                     <div class="flex items-center w-48">
-                        <div>
-                            <img class="inline-block h-10 w-auto rounded-full ml-4 mt-2" src="{{ $user->avatar }}"
+                        <div class="flex-shrink-0 ml-4 mt-2">
+                            <img class="inline-block h-10 w-10 rounded-full" src="{{ $user->avatar }}"
                                  alt="">
                         </div>
                         <div class="ml-3 mt-3">
-                            <p class="text-base leading-6 font-medium">
+                            <p class="text-base leading-6 font-medium truncate" style="max-width: 123px;">
                                 {{ $user->name }}
                             </p>
-                            <p class="text-sm leading-5 font-medium text-gray-400 transition ease-in-out duration-150">
+                            <p class="text-sm leading-5 font-medium text-gray-400 transition ease-in-out duration-150 truncate"
+                               style="max-width: 123px;">
                                 {{ '@' . $user->username }}
                             </p>
                         </div>

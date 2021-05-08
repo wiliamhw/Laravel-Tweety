@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Services\DeleteFileService;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 use App\Models\User;
 
@@ -59,6 +60,12 @@ class ProfilesController extends Controller
         if (request('profile_banner')) {
             $attributes['profile_banner'] = request('profile_banner')->store('profile-banners');
             $deleteFileService->deleteLocalFile($user->profile_banner_path);
+        }
+
+        if (request('password')) {
+            $attributes['password'] = Hash::make(request('password'));
+        } else {
+            unset($attributes['password']);
         }
         $user->update($attributes);
 

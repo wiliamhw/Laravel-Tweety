@@ -1,6 +1,5 @@
-<x-master>
-
-    <main class="sm:container sm:mx-auto sm:max-w-lg sm:mt-10">
+<x-landing margin_top="mt-6">
+    <main class="sm:container sm:mx-auto sm:max-w-lg sm:mt-3">
         <div class="flex">
             <div class="w-full">
                 <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm sm:shadow-lg">
@@ -95,4 +94,4 @@
         </div>
     </main>
 
-</x-master>
+</x-landing>

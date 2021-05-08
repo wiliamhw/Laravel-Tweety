@@ -3,7 +3,7 @@
     <section class="px-8 text-white">
         <main class="container mx-auto">
             <div class="lg:flex lg:justify-between">
-                <div class="xl:text-xl w-1/6 max-w-sm">
+                <div class="xl:text-lg w-1/6 max-w-sm">
                     @include ('_sidebar-links')
                 </div>
 
