@@ -1,10 +1,9 @@
 <div class="flex items-center py-4 space-x-5">
     <div class="text-white text-xs">
-        <form method="POST" action="/tweets/{{ $tweet->id }}/{{ $tweet->isLikedBy(auth()->user()) ? 'reset' : 'like' }}">
-            @csrf
+        <form wire:submit.prevent="like">
             <button type="submit"
                     class="flex items-center
-                        {{ $tweet->isLikedBy(auth()->user())
+                        {{ $isLiked
                             ? 'text-blue-500 hover:text-gray-600'
                             : 'text-gray-500 hover:text-blue-500' }}
                         transition duration-350 ease-in-out">
@@ -22,18 +21,17 @@
                     </g>
                 </svg>
                 <span>
-                    {{ $tweet->likes ?: 0 }}
+                    {{ $likes }}
                 </span>
             </button>
         </form>
     </div>
 
     <div class="text-white text-xs">
-        <form method="POST" action="/tweets/{{ $tweet->id }}/{{ !$tweet->isLikedBy(auth()->user()) ? 'reset' : 'dislike' }}">
-            @csrf
+        <form wire:submit.prevent="dislike">
             <button type="submit"
                     class="flex items-center
-                        {{ $tweet->isDislikedBy(auth()->user())
+                        {{ $isDisliked
                             ? 'text-red-500 hover:text-gray-600'
                             : 'text-gray-500 hover:text-red-500' }}
                         transition duration-350 ease-in-out">
@@ -51,7 +49,7 @@
                 </svg>
 
                 <span>
-                    {{ $tweet->dislikes ?: 0 }}
+                    {{ $dislikes }}
                 </span>
             </button>
         </form>

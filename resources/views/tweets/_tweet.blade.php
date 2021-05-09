@@ -1,4 +1,4 @@
-<article class="hover:bg-gray-800 transition duration-350 ease-in-out">
+<article class="hover:bg-gray-800 transition duration-350 ease-in-out" xmlns:livewire="http://www.w3.org/1999/html">
     <div class="flex flex-shrink-0 p-4 pb-0 justify-between align-middle">
         <a href="{{ $tweet->user->path() }}" class="flex-shrink-0 group block">
             <div class="flex items-center">
@@ -45,6 +45,6 @@
             </div>
         @endif
 
-        <x-like-buttons :tweet="$tweet"/>
+        <livewire:like-buttons :tweet="$tweet"/>
     </div>
 </article>

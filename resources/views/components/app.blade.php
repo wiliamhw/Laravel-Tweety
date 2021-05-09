@@ -26,6 +26,7 @@
     <link href="{{ asset('css/overlay.css') }}" rel="stylesheet">
     <link href="{{ asset('css/alert.css') }}" rel="stylesheet">
     <link href="{{ asset('css/three-dot.css') }}" rel="stylesheet">
+    @livewireStyles
 </head>
 
 <body class="h-screen overflow-hidden antialiased leading-none font-sans" style="background: #15202b;">
@@ -61,6 +62,8 @@
         </main>
     </section>
 </div>
+@livewireScripts
+<script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js" data-turbolinks-eval="false" data-turbo-eval="false"></script>
 </body>
 
 <style>
