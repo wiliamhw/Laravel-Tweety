@@ -1,13 +1,15 @@
-<div class="flex items-center py-4">
-    <div class="mr-4 text-white text-xs">
-        <form method="POST" action="/tweets/{{ $tweet->id }}/like">
+<div class="flex items-center py-4 space-x-5">
+    <div class="text-white text-xs">
+        <form method="POST" action="/tweets/{{ $tweet->id }}/{{ $tweet->isLikedBy(auth()->user()) ? 'reset' : 'like' }}">
             @csrf
             <button type="submit"
                     class="flex items-center
-                            {{ $tweet->isLikedBy(auth()->user()) ? 'text-blue-500' : 'text-gray-500' }}
-                            hover:text-green-500 transition duration-350 ease-in-out">
+                        {{ $tweet->isLikedBy(auth()->user())
+                            ? 'text-blue-500 hover:text-gray-600'
+                            : 'text-gray-500 hover:text-blue-500' }}
+                        transition duration-350 ease-in-out">
                 <svg viewBox="0 0 20 20"
-                     class="mr-1 w-3"
+                     class="mr-1 w-3 h-4"
                      style="transform: scaleX(-1);"
                 >
                     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -22,21 +24,21 @@
                 <span>
                     {{ $tweet->likes ?: 0 }}
                 </span>
-
             </button>
         </form>
     </div>
 
-    <div class="mr-4 text-white text-xs">
-        <form method="POST" action="/tweets/{{ $tweet->id }}/like">
+    <div class="text-white text-xs">
+        <form method="POST" action="/tweets/{{ $tweet->id }}/{{ !$tweet->isLikedBy(auth()->user()) ? 'reset' : 'dislike' }}">
             @csrf
-            @method('DELETE')
             <button type="submit"
                     class="flex items-center
-                        {{ $tweet->isDislikedBy(auth()->user()) ? 'text-blue-500' : 'text-gray-500' }}
-                        hover:text-red-500 transition duration-350 ease-in-out">
+                        {{ $tweet->isDislikedBy(auth()->user())
+                            ? 'text-red-500 hover:text-gray-600'
+                            : 'text-gray-500 hover:text-red-500' }}
+                        transition duration-350 ease-in-out">
                 <svg viewBox="0 0 20 20"
-                     class="mr-1 w-3"
+                     class="mr-1 w-3 h-4"
                 >
                     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                         <g class="fill-current">

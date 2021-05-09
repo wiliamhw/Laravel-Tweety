@@ -7,7 +7,7 @@
                     <hr class="border-gray-800 border"/>
                 @endif
             @empty
-                <p class="p-4">No tweets yet</p>
+                <p class="p-4 text-center">No tweets yet</p>
             @endforelse
         </li>
     </ul>

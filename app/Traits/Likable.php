@@ -55,4 +55,10 @@ trait Likable
             ]
         );
     }
+
+    public function reset($user = null)
+    {
+        $user_id = $user ? $user->id : auth()->id();
+        $this->likes()->where('user_id', $user_id)->delete();
+    }
 }

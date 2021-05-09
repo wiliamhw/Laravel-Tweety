@@ -35,6 +35,6 @@
         </div>
         <hr class="border-gray-800">
     @empty
-        <p class="p-4">No friends yet</p>
+        <p class="p-4 text-center">No friends yet</p>
     @endforelse
 </div>
