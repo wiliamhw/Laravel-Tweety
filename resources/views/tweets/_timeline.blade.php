@@ -2,7 +2,7 @@
     <ul class="list-none">
         <li>
             @forelse ($tweets as $tweet)
-                @include('_tweet')
+                @include('tweets._tweet')
                 @if (!$loop->last)
                     <hr class="border-gray-800 border"/>
                 @endif

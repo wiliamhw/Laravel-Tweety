@@ -44,7 +44,7 @@
                     </svg>
                     <div>
                         <span>Laravel</span>
-                        <span class="text-xs text-blue-300 block">Version 8.0, PHP</span>
+                        <span class="text-xs text-blue-300 block">PHP, V8.0</span>
                     </div>
                     <div>
                         <i class="fa fa-chevron-right opacity-0 group-hover:opacity-100 transform -translate-x-1 group-hover:translate-x-0 block transition"></i>
@@ -82,7 +82,7 @@
                     <img class="w-9" src="{{ asset("images/livewire.png") }}" alt=""/>
                     <div>
                         <span>Livewire</span>
-                        <span class="text-xs text-blue-300 block">Version 2</span>
+                        <span class="text-xs text-blue-300 block">V2.4.4</span>
                     </div>
                     <div>
                         <i class="fa fa-chevron-right opacity-0 group-hover:opacity-100 transform -translate-x-1 group-hover:translate-x-0 block transition"></i>

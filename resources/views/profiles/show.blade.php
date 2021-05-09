@@ -86,7 +86,7 @@
         </div>
     </header>
 
-    @include ('_timeline', [
+    @include ('tweets._timeline', [
         'tweets' => $tweets
     ])
 </x-app>
