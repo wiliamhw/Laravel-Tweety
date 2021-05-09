@@ -125,12 +125,13 @@
                 <div id="profile_text-div" class="border border-gray-700 border-4 border-2 rounded-md">
                     <div class="m-3">
                         <label class="block mb-2 uppercase font-bold text-xs text-gray-400" for="profile_text">Profile Text</label>
-                        <textarea class="bg-transparent outline-none w-full leading-5"
-                                type="text" id="profile_text" name="profile_text"
-                                onfocusin="changeBorder('profile_text-div', 'in')"
-                                onfocusout="changeBorder('profile_text-div', 'out')"
-                                autocomplete="off" spellcheck="false"
-                                oninput="resize(this)"
+                        <textarea class="font-sans bg-transparent outline-none w-full leading-5"
+                                  style="font-size: 15px;"
+                                  type="text" id="profile_text" name="profile_text"
+                                  onfocusin="changeBorder('profile_text-div', 'in')"
+                                  onfocusout="changeBorder('profile_text-div', 'out')"
+                                  autocomplete="off" spellcheck="false"
+                                  oninput="resize(this)"
                         >{{ $user->profile_text }}</textarea>
                         <script>resize()</script>
                         @error('profile_text')

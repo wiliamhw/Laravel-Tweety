@@ -21,15 +21,16 @@
         @endcan
     </div>
 
-    <div class="pl-16">
+    <div class="pr-7" style="padding-left: 4.3rem;">
         @if ($tweet->body)
-            <p class="text-base font-normal leading-5 font-sans width-auto text-white flex-shrink">
+            <p class="break-words leading-5 font-sans width-auto text-white flex-shrink"
+                style="font-size: 15px;">
                 {{ $tweet->body }}
             </p>
         @endif
 
         @if ($tweet->image)
-            <div class="md:flex-shrink pr-6 pt-3 xl:h-96 xl:pr-8">
+            <div class="md:flex-shrink">
                 <img class="mt-4 border border-cool-gray-400 rounded-lg object-cover outline-none cursor-pointer w-full h-full"
                      style="height: 337px;"
                      src="{{ $tweet->image }}"
