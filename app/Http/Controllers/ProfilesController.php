@@ -56,14 +56,12 @@ class ProfilesController extends Controller
             $attributes['avatar'] = request('avatar')->store('avatars');
             $deleteFileService->deleteLocalFile($user->avatar_path);
         }
-
         if (request('profile_banner')) {
             $attributes['profile_banner'] = request('profile_banner')->store('profile-banners');
             $deleteFileService->deleteLocalFile($user->profile_banner_path);
         }
-
         if (request('password')) {
-            $attributes['password'] = Hash::make(request('password'));
+            $attributes['password'] = request('password');
         } else {
             unset($attributes['password']);
         }

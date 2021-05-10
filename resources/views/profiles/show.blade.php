@@ -47,7 +47,7 @@
                 </div>
                 <!-- Description and others -->
                 <div class="mt-3">
-                    <p class="break-words leading-4 font-sans width-auto text-white flex-shrink mb-2"
+                    <p class="break-words leading-4 font-sans width-auto text-white flex-shrink pr-4 mb-2"
                         style="font-size: 15px;">
                         {{ $user->profile_text }}
                     </p>

@@ -10,7 +10,8 @@
                 >
 
                 <div>
-                    <h4 class="font-bold">{{ '@' . $user->username }}</h4>
+                    <h4 class="text-white font-bold">{{ $user->name }}</h4>
+                    <h5 class="text-gray-400">{{ '@' . $user->username }}</h5>
                 </div>
             </a>
         @endforeach
