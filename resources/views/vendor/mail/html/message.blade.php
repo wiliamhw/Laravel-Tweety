@@ -3,7 +3,7 @@
 @slot('header')
 @component('mail::header', ['url' => config('app.url')])
     <a href="{{ config('app.url') }}">
-        <img src="{{ asset('images/title-icon.svg') }}"
+        <img src="{{ asset('images/email-icon.png') }}"
              alt="logo-tweety"
              style="width: 3rem;"
         >
