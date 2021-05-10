@@ -23,7 +23,7 @@
         @if (!Request::is('/'))
             <header class="flex px-8 py-4 justify-center {{ $marginTop }} container mx-auto">
                 <a href="{{ route('landing') }}">
-                    <img class="h-8 w-8 text-white ml-8" src="{{ asset('images/logo.svg') }}" alt="logo">
+                    <img class="h-8 w-8 text-white" src="{{ asset('images/logo.svg') }}" alt="logo">
                 </a>
             </header>
         @endif
