@@ -5,7 +5,7 @@
     <a href="{{ config('app.url') }}">
         <img src="{{ asset('images/email-icon.png') }}"
              alt="logo-tweety"
-             style="width: 3rem;"
+             style="width: 3rem; margin-top: 1.25rem;"
         >
     </a>
 @endcomponent
