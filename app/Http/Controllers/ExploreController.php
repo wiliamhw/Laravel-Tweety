@@ -8,8 +8,23 @@ use App\Models\User;
 class ExploreController extends Controller
 {
     public function index() {
+        $users = User::select('username', 'name', 'avatar');
+        $users_arr = [];
+
+        foreach ($users->get() as $user) {
+            $temp = [
+                'username' => $user->username,
+                'name' => $user->name,
+                'avatar' => $user->avatar,
+                'path' => $user->path()
+            ];
+            array_push($users_arr, $temp);
+        };
+        $users = $users->paginate(9);
+
         return view('explore', [
-            'users' => User::paginate(50)
+            'users' => $users,
+            'users_arr' => $users_arr
         ]);
     }
 }

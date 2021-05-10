@@ -1,5 +1,6 @@
 <x-master>
     <div class="mb-10">
+        <livewire:search-dropdown :users="$users_arr"/>
         @foreach ($users as $user)
             <a href="{{ $user->path() }}" class="flex items-center mb-5">
                 <img src="{{ $user->avatar }}"
