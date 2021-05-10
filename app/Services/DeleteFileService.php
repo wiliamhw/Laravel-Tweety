@@ -16,8 +16,8 @@ class DeleteFileService
     {
         // Don't delete default image
         if (!$path_to_file
-            || $path_to_file === 'avatars/default-avatar.jpeg'
-            || $path_to_file === 'profile-banners/default-profile-banner.jpg') {
+            || $path_to_file === 'images/default-avatar.jpeg'
+            || $path_to_file === 'images/default-profile-banner.jpg') {
             return [
                 'type' => 'warning',
                 'message' => 'Invalid file path'

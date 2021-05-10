@@ -5,7 +5,7 @@ function getRaws($target) {
     $new_raws = [];
 
     for ($i = 0; $i < count($raws); $i++) {
-        if ($i < 4) continue;
+        if ($i < 3 || $raws[$i] === 'storage') continue;
         array_push($new_raws, $raws[$i]);
     }
 
