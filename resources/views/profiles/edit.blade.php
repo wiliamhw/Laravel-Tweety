@@ -132,12 +132,15 @@
                                   onfocusout="changeBorder('profile_text-div', 'out')"
                                   autocomplete="off" spellcheck="false"
                                   oninput="resize(this)"
+                                  placeholder="Tell about yourself."
                         >{{ $user->profile_text }}</textarea>
+
                         <script>resize()</script>
                         @error('profile_text')
-                        <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                            <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                         @enderror
                     </div>
+                    <p id="profile_text-info" class="text-red-500 text-xs px-3 pb-3" style="display: none;"></p>
                 </div>
             </div>
 

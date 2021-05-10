@@ -14,13 +14,11 @@ class DeleteFileService
      */
     public function deleteLocalFile($path_to_file)
     {
-        $response = [];
-
         // Don't delete default image
         if (!$path_to_file
             || $path_to_file === 'avatars/default-avatar.jpeg'
             || $path_to_file === 'profile-banners/default-profile-banner.jpg') {
-            $response = [
+            return [
                 'type' => 'warning',
                 'message' => 'Invalid file path'
             ];

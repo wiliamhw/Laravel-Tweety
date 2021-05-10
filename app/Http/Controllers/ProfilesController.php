@@ -49,7 +49,7 @@ class ProfilesController extends Controller
                 'max:255',
                 'confirmed'
             ],
-            'profile_text' => 'nullable|string'
+            'profile_text' => 'nullable|string|max:280'
         ]);
 
         if (request('avatar')) {

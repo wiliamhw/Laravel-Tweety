@@ -19,7 +19,7 @@ class TweetsController extends Controller
         $attributes = request()->validate([
             'body' => [
                 'required_without:image_tweet',
-                'max:255'
+                'max:280'
             ],
             'image_tweet' => [
                 'image',
