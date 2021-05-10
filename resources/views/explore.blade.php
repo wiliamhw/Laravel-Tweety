@@ -1,4 +1,4 @@
-<x-app>
+<x-master>
     <div class="mb-10">
         @foreach ($users as $user)
             <a href="{{ $user->path() }}" class="flex items-center mb-5">
@@ -16,4 +16,4 @@
 
         {{ $users->links() }}
     </div>
-</x-app>
+</x-master>

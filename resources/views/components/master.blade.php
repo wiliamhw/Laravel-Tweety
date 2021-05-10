@@ -19,6 +19,7 @@
     <script src="{{ asset('js/preview-image.js') }}" defer></script>
     <script src="{{ asset('js/change-border.js') }}" defer></script>
     <script src="{{ asset('js/dynamic-txtarea.js') }}"></script>
+    <script src="https://use.fontawesome.com/b22f9a1bb6.js"></script>
     <script src="https://unpkg.com/turbolinks"></script>
 
     <!-- Styles -->

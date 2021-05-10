@@ -1,4 +1,4 @@
-<x-app>
+<x-master>
     <header class="border border-gray-800 border-y-0">
         <!-- Profile Banner -->
         <div class="w-full bg-cover bg-no-repeat bg-center"
@@ -89,4 +89,4 @@
     @include ('tweets._timeline', [
         'tweets' => $tweets
     ])
-</x-app>
+</x-master>

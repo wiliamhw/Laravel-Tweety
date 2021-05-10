@@ -1,4 +1,4 @@
-<x-app>
+<x-master>
     <form method="POST" action="{{ $user->path() }}" enctype="multipart/form-data">
         @csrf
         @method('PATCH')
@@ -224,4 +224,4 @@
             </div>
         </div>
     </form>
-</x-app>
+</x-master>

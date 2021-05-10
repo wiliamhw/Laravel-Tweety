@@ -1,4 +1,4 @@
-<x-app>
+<x-master>
     <livewire:publish-tweet-panel>
     @include ('tweets._timeline', $tweets)
-</x-app>
+</x-master>
