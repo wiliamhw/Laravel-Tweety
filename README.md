@@ -1,7 +1,9 @@
 # Laravel-Tweety
-Twitter clone using Laravel and Tailwind CSS.  
+Twitter clone web.  
 Made using:
 * Laravel v8.0
 * Tailwind
 * Livewire v2.4.4
 * Turbolinks
+
+[Link](http://47.254.198.205:81)
