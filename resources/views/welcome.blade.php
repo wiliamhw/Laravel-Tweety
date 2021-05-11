@@ -33,7 +33,7 @@
     <div class="text-white relative">
         <h3 class="text-uppercase font-semibold">Frameworks & Plugins</h3>
         <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 sm:gap-5 uppercase">
-            <a href="https://laravel.com/" target="_blank">
+            <a href="https://laravel.com/" target="_blank" rel="noopener">
                 <div
                     class="group flex items-center bg-indigo-900 bg-opacity-40 shadow-xl gap-5 px-6 py-5 rounded-lg ring-2 ring-offset-2 ring-offset-blue-800 ring-cyan-700 mt-5 cursor-pointer hover:bg-blue-900 hover:bg-opacity-100 transition">
                     <svg class="w-9" viewBox="0 0 50 52" xmlns="http://www.w3.org/2000/svg">
@@ -52,7 +52,7 @@
                 </div>
             </a>
 
-            <a href="https://tailwindcss.com/" target="_blank">
+            <a href="https://tailwindcss.com/" target="_blank" rel="noopener">
                 <div
                     class="group flex items-center bg-indigo-900 bg-opacity-40 shadow-xl gap-5 px-6 py-5 rounded-lg ring-2 ring-offset-2 ring-offset-blue-800 ring-cyan-700 mt-5 cursor-pointer hover:bg-blue-900 hover:bg-opacity-100 transition">
                     <svg class="w-9" preserveAspectRatio="xMidYMid" xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +76,7 @@
                 </div>
             </a>
 
-            <a href="https://laravel-livewire.com/" target="_blank">
+            <a href="https://laravel-livewire.com/" target="_blank" rel="noopener">
                 <div
                     class="group flex items-center bg-indigo-900 bg-opacity-40 shadow-xl gap-5 px-6 py-5 rounded-lg ring-2 ring-offset-2 ring-offset-blue-800 ring-cyan-700 mt-5 cursor-pointer hover:bg-blue-900 hover:bg-opacity-100 transition">
                     <img class="w-9" src="{{ asset("images/livewire.png") }}" alt=""/>
@@ -90,7 +90,7 @@
                 </div>
             </a>
 
-            <a href="https://github.com/turbolinks/turbolinks" target="_blank">
+            <a href="https://github.com/turbolinks/turbolinks" target="_blank" rel="noopener">
                 <div
                     class="group flex items-center bg-indigo-900 bg-opacity-40 shadow-xl gap-5 px-6 py-5 rounded-lg ring-2 ring-offset-2 ring-offset-blue-800 ring-cyan-700 mt-5 cursor-pointer hover:bg-blue-900 hover:bg-opacity-100 transition">
                     <img class="w-9" src="" alt=""/>
