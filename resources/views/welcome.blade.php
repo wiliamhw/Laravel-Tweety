@@ -68,7 +68,7 @@
                     </svg>
                     <div>
                         <span>Tailwind</span>
-                        <span class="text-xs text-blue-300 block">CSS</span>
+                        <span class="text-xs text-blue-300 block">CSS, V4.3</span>
                     </div>
                     <div>
                         <i class="fa fa-chevron-right opacity-0 group-hover:opacity-100 transform -translate-x-1 group-hover:translate-x-0 block transition"></i>
@@ -82,7 +82,7 @@
                     <img class="w-9" src="{{ asset("images/livewire.png") }}" alt=""/>
                     <div>
                         <span>Livewire</span>
-                        <span class="text-xs text-blue-300 block">V2.4.4</span>
+                        <span class="text-xs text-blue-300 block">V2.4</span>
                     </div>
                     <div>
                         <i class="fa fa-chevron-right opacity-0 group-hover:opacity-100 transform -translate-x-1 group-hover:translate-x-0 block transition"></i>
@@ -96,7 +96,7 @@
                     <img class="w-9" src="" alt=""/>
                     <div>
                         <span>Turbolinks</span>
-                        <span class="text-xs text-blue-300 block">Ajax</span>
+                        <span class="text-xs text-blue-300 block">Ajax, V5.2</span>
                     </div>
                     <div>
                         <i class="fa fa-chevron-right opacity-0 group-hover:opacity-100 transform -translate-x-1 group-hover:translate-x-0 block transition"></i>
