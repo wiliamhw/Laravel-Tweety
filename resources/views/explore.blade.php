@@ -2,7 +2,8 @@
     <div class="mb-10">
         <livewire:search-dropdown :users="$users_arr"/>
         @foreach ($users as $user)
-            <a href="{{ $user->path() }}" class="flex items-center mb-5">
+            <a href="{{ $user->path() }}" class="py-2.5 px-5 flex items-center
+                                          hover:bg-gray-800 transition duration-350 ease-in-out">
                 <img src="{{ $user->avatar }}"
                       alt="{{ $user->username }}'s avatar"
                       width="60"
