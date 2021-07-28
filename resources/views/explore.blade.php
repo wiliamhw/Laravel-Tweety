@@ -17,6 +17,8 @@
             </a>
         @endforeach
 
-        {{ $users->links() }}
+        <div class="mt-4">
+            {{ $users->links() }}
+        </div>
     </div>
 </x-master>

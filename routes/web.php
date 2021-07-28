@@ -32,10 +32,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/tweets', [TweetsController::class, 'index'])->name('home');
     Route::post('/tweets', [TweetsController::class, 'store']);
 
-    Route::post('/tweets/{tweet}/like', [TweetLikesController::class, 'like']);
-    Route::post('/tweets/{tweet}/dislike', [TweetLikesController::class, 'dislike']);
-    Route::post('/tweets/{tweet}/reset', [TweetLikesController::class, 'reset']);
-
     Route::post(
         '/profiles/{user:username}/follow',
         [FollowsController::class, 'store']
