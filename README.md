@@ -9,5 +9,7 @@ Made using:
 [Link](http://47.254.198.205:81)
 
 # Account Credentials
-Email address: `admin@admin.com`  
-Password: `admin123`
+```
+Email address: admin@admin.com
+Password: admin123
+```
