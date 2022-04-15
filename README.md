@@ -10,6 +10,6 @@ Made using:
 
 # Account Credentials
 ```
-Email address: admin@admin.com
-Password: admin123
+Email address: user@user.com
+Password: qwerty123
 ```
