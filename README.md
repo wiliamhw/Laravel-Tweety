@@ -6,8 +6,6 @@ Made using:
 * Livewire v2.4.4
 * Turbolinks
 
-[Link](http://47.254.198.205:81)
-
 # Account Credentials
 ```
 Email address: user@user.com
