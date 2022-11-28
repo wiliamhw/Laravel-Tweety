@@ -10,6 +10,7 @@ build:
 		&& docker exec -d $(CONTAINER_PREFIX)_php cp -n .env.example .env \
 		&& docker exec -d $(CONTAINER_PREFIX)_php php artisan key:generate
 	docker exec -d $(CONTAINER_PREFIX)_php chmod 777 -R .
+	docker exec -d $(CONTAINER_PREFIX)_php php artisan storage:link
 	make stop
 	echo "Build complete"
 
