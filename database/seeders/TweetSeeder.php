@@ -19,7 +19,7 @@ class TweetSeeder extends Seeder
 
         $users->each(
             function ($user) {
-                Tweet::factory(10)
+                Tweet::factory(5)
                     ->create(['user_id' => $user->id]);
             }
         );
