@@ -5,9 +5,3 @@ Made using:
 * Tailwind
 * Livewire v2.4.4
 * Turbolinks
-
-# Account Credentials
-```
-Email address: user@user.com
-Password: qwerty123
-```
