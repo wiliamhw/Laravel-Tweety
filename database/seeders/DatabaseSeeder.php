@@ -37,8 +37,8 @@ class DatabaseSeeder extends Seeder
         );
 
         // Populate likes table
-        // Every tweet is liked/disliked by a total of one-to-three
-        $tweets->each(
+        // 10 tweet is liked/disliked by a total of one-to-three
+        $tweets->take(10)->each(
             function ($tweet) use ($users) {
                 $users->random(rand(1, 3))->each(
                     function ($rand_user) use ($tweet) {
