@@ -5,12 +5,12 @@ build:
 	sudo chmod 777 -R mysql || true
 	docker compose -f docker-compose.yml build
 	docker compose -f docker-compose.yml up -d
-	docker exec -d $(CONTAINER_PREFIX)_php composer install
-	docker exec -d $(CONTAINER_PREFIX)_php [ ! -f .env ] \
-		&& docker exec -d $(CONTAINER_PREFIX)_php cp -n .env.example .env \
-		&& docker exec -d $(CONTAINER_PREFIX)_php php artisan key:generate
-	docker exec -d $(CONTAINER_PREFIX)_php chmod 777 -R .
-	docker exec -d $(CONTAINER_PREFIX)_php php artisan storage:link
+	docker exec $(CONTAINER_PREFIX)_php composer install
+	docker exec $(CONTAINER_PREFIX)_php [ ! -f .env ] \
+		&& docker exec $(CONTAINER_PREFIX)_php cp -n .env.example .env \
+		&& docker exec $(CONTAINER_PREFIX)_php php artisan key:generate
+	docker exec $(CONTAINER_PREFIX)_php chmod 777 -R .
+	docker exec $(CONTAINER_PREFIX)_php php artisan storage:link
 	make stop
 	echo "Build complete"
 
