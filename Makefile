@@ -40,9 +40,11 @@ analyse:
 start_services:
 	sudo service mysql start || true
 	sudo service nginx start || true
+	sudo service redis start || true
 
 stop_services:
 	sudo service mysql stop || true
 	sudo service nginx stop || true
+	sudo service redis stop || true
 
 .PHONY: build up stop down ex analyse purge start_services stop_services
