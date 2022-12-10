@@ -118,7 +118,26 @@ class User extends Authenticatable
 
     public function getTweetsCacheKey(): string
     {
-        return 'user_tweets_'.$this->username;
+        return 'user_tweets_'.$this->id;
+    }
+
+    /**
+     * Retrieve the model for a bound value.
+     *
+     * @param  mixed  $value
+     * @param  string|null  $field
+     * @return \Illuminate\Database\Eloquent\Model|null
+     */
+    public function resolveRouteBinding($value, $field = null)
+    {
+        if ($field !== 'username') {
+            return $this->where($this->getRouteKeyName(), $value)->firstOrFail();
+        }
+
+        return Cache::rememberForever(
+            'user_'.$value,
+            fn () => User::where($field, $value)->firstOrFail()
+        );
     }
 
     /**
@@ -134,6 +153,7 @@ class User extends Authenticatable
             if (isset($updatedFields['avatar'])) {
                 Cache::forget($user->getTweetsCacheKey());
             }
+            Cache::forget('user_'.$user->username);;
         });
     }
 }
