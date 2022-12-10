@@ -3,8 +3,8 @@ include .env
 build:
 	make stop_services
 	sudo chmod 777 -R mysql || true
-	docker-compose -f docker-compose.yml build
-	docker-compose -f docker-compose.yml up -d
+	docker compose -f docker-compose.yml build
+	docker compose -f docker-compose.yml up -d
 	docker exec -d $(CONTAINER_PREFIX)_php composer install
 	docker exec -d $(CONTAINER_PREFIX)_php [ ! -f .env ] \
 		&& docker exec -d $(CONTAINER_PREFIX)_php cp -n .env.example .env \
@@ -16,14 +16,14 @@ build:
 
 up:
 	make stop_services
-	docker-compose -f docker-compose.yml up -d
+	docker compose -f docker-compose.yml up -d
 
 stop:
-	docker-compose -f docker-compose.yml stop
+	docker compose -f docker-compose.yml stop
 	make start_services
 
 down:
-	docker-compose -f docker-compose.yml down
+	docker compose -f docker-compose.yml down
 	make start_services
 
 purge:
