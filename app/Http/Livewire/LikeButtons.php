@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Tweet;
+use Illuminate\Support\Facades\Cache;
 use Livewire\Component;
 
 class LikeButtons extends Component
@@ -43,6 +44,7 @@ class LikeButtons extends Component
                 $this->isDisliked = false;
             }
         }
+        Cache::forget($this->tweet->user->getTweetsCacheKey());
     }
 
     public function dislike()
@@ -61,5 +63,6 @@ class LikeButtons extends Component
                 $this->isLiked = false;
             }
         }
+        Cache::forget($this->tweet->user->getTweetsCacheKey());
     }
 }
