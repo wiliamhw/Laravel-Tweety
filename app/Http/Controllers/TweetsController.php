@@ -40,7 +40,7 @@ class TweetsController extends Controller
             'image' => $attributes['image_tweet']
         ]);
 
-        Cache::forget(Tweet::USER_TWEETS_CACHE_KEY);
+        Cache::forget(auth()->user()->getTweetsCacheKey());
 
         return redirect()->route('home')->with('success','Tweet posted successfully!');
     }
@@ -58,7 +58,7 @@ class TweetsController extends Controller
             $response['message'] = 'Tweet successfully deleted';
         }
 
-        Cache::forget(Tweet::USER_TWEETS_CACHE_KEY);
+        Cache::forget(auth()->user()->getTweetsCacheKey());
 
         return back()->with($response['type'], $response['message']);
     }

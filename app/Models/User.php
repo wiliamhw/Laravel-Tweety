@@ -70,7 +70,7 @@ class User extends Authenticatable
         $follower = $this->follows()->pluck('id');
 
         if ($onlyThisUser) {
-            $tweets = Cache::rememberForever(Tweet::USER_TWEETS_CACHE_KEY, function () {
+            $tweets = Cache::rememberForever($this->getTweetsCacheKey(), function () {
                 return Tweet::where('user_id', $this->id)
                     ->with('user')
                     ->withLikes()
@@ -114,5 +114,26 @@ class User extends Authenticatable
 
     public function likes() {
         return $this->hasMany(Like::class);
+    }
+
+    public function getTweetsCacheKey(): string
+    {
+        return 'user_tweets_'.$this->username;
+    }
+
+    /**
+     * The "booted" method of the model.
+     *
+     * @return void
+     */
+    protected static function booted()
+    {
+        static::updated(function (self $user) {
+            $updatedFields = $user->getDirty();
+
+            if (isset($updatedFields['avatar'])) {
+                Cache::forget($user->getTweetsCacheKey());
+            }
+        });
     }
 }
