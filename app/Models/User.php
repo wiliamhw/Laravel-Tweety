@@ -70,11 +70,13 @@ class User extends Authenticatable
         $follower = $this->follows()->pluck('id');
 
         if ($onlyThisUser) {
-            $tweets = Tweet::where('user_id', $this->id)
-                ->with('user')
-                ->withLikes()
-                ->latest()
-                ->paginate(getPaginate());
+            $tweets = Cache::rememberForever(Tweet::USER_TWEETS_CACHE_KEY, function () {
+                return Tweet::where('user_id', $this->id)
+                    ->with('user')
+                    ->withLikes()
+                    ->latest()
+                    ->paginate(getPaginate());
+            });
         } else {
             $tweets = Tweet::where('user_id', $this->id)
                 ->orWhereIn('user_id', $follower)

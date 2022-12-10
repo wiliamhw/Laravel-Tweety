@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Services\DeleteFileService;
 use App\Models\Tweet;
+use Illuminate\Support\Facades\Cache;
 
 class TweetsController extends Controller
 {
@@ -39,6 +40,8 @@ class TweetsController extends Controller
             'image' => $attributes['image_tweet']
         ]);
 
+        Cache::forget(Tweet::USER_TWEETS_CACHE_KEY);
+
         return redirect()->route('home')->with('success','Tweet posted successfully!');
     }
 
@@ -54,6 +57,9 @@ class TweetsController extends Controller
             $tweet->delete();
             $response['message'] = 'Tweet successfully deleted';
         }
+
+        Cache::forget(Tweet::USER_TWEETS_CACHE_KEY);
+
         return back()->with($response['type'], $response['message']);
     }
 }

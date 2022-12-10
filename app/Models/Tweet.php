@@ -10,6 +10,8 @@ class Tweet extends Model
 {
     use HasFactory, Likable;
 
+    const USER_TWEETS_CACHE_KEY = 'user_tweets';
+
     protected $fillable = ['user_id', 'body', 'image'];
 
     public function user() {
